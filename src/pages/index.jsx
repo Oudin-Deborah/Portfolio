@@ -1,10 +1,13 @@
 //Fonction pour la page d'accueil//
 import React from "react";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 function Index() {
   return (
     <div>
-      <h1>Titre Index</h1>
+      <Header />
+      <Footer />
     </div>
   );
 }
