@@ -1,15 +1,17 @@
 import { Routes, Route } from "react-router-dom";
-import Index from "./pages";
 import { useState } from "react";
 import "./App.css";
+//Routes dans l'ordre de l'arbre DOM
+import Welcome from "./pages/welcome";
+import Index from "./pages";
 import About from "./pages/about";
-import Error from "./pages/error";
 import Contact from "./pages/contact";
-
+import Error from "./pages/error";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Index />} />
+      <Route path="/" element={<Welcome />} />
+      <Route path="/Index" element={<Index />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<Error />} />

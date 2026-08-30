@@ -1,17 +1,15 @@
-//Fonction pour la page d'erreur//
 import React from "react";
-import Header from "../components/header";
 import Footer from "../components/footer";
+import { Link } from "react-router-dom";
 import Logo from "../components/logo";
 
-function Error() {
+function Welcome() {
   return (
     <div>
       <Logo />
-      <h1>Erreur 404</h1>
       <Footer />
     </div>
   );
 }
 
-export default Error;
+export default Welcome;

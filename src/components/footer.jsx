@@ -1,5 +1,4 @@
-//Fonction pour le footer//
-
+//Fonction pour le footer visible sur toutes les pages du site//
 function Footer() {
   return (
     <footer>

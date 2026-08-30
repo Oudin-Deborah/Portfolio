@@ -1,12 +1,8 @@
-//Fonction pour le header//
-
+//Fonction pour le header visible sur toutes les pages du site//
 function Header() {
   return (
     <header>
-      <img
-        src="src/assets/logo_oudin_deborah.webp"
-        alt="Oudin Deborah professional logo and personal branding mark"
-      />
+      <h1>Titre Header</h1>
     </header>
   );
 }
