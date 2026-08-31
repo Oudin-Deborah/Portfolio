@@ -3,23 +3,28 @@ import Footer from "../components/footer";
 import Logo from "../components/logo";
 import "../assets/style/styleWelcome.sass";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolume } from "@fortawesome/free-solid-svg-icons";
+import { faVolume,faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
+import AudioLoop from "../components/audioloop";
 
 function Welcome() {
   return (
-    <div className="Welcome__page">
+    <section className="Welcome__page">
       <Logo />
-      <h1>Bienvenue</h1>
-      <h2>Je vous propose ici une experience immersive</h2>
-      <p className="welcome__p">
-        Pour plus d'immersion je vous invite à activer le son représenté par
-        l'icone <FontAwesomeIcon icon={faVolume} /> Ce site me représente, pas
-        seulement ce que je sais faire, mais qui je suis. Alors prennez autant
-        de plaisir à le découvrir que moi à vous l'offrir
-      </p>
+      <div className="Welcome__Wrapper">
+        <h1>Bienvenue</h1>
+        <h2 className="Welcome__h2">
+          Je vous propose ici une experience immersive
+        </h2>
+        <p className="Welcome__p">
+          Pour plus d'immersion je vous invite à activer le son représenté par
+          l'icone <AudioLoop/> Ce site me représente, pas
+          seulement ce que je sais faire, mais qui je suis. <br /> Alors prennez
+          autant de plaisir à le découvrir que moi à vous l'offrir.
+        </p>
+      </div>
 
       <Footer />
-    </div>
+    </section>
   );
 }
 
