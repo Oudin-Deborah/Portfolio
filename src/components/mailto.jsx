@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+//fonction de gestion du form d'envoi de mail//
 function ContactForm() {
   const [statut, setStatut] = useState(null); // null | "envoi" | "succes" | "erreur"
 
@@ -8,7 +9,7 @@ function ContactForm() {
     setStatut("envoi");
 
     const formData = new FormData(e.target);
-
+    //conditionnelle asynchrone de l'envoi//
     try {
       const response = await fetch("https://formspree.io/f/mzebzwwj", {
         method: "POST",
@@ -26,7 +27,7 @@ function ContactForm() {
       setStatut("erreur");
     }
   };
-
+  //form//
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" name="nom" placeholder="Ton nom" required />

@@ -2,9 +2,18 @@
 function Footer() {
   return (
     <footer>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis vero
-      reprehenderit totam delectus ipsum provident, alias minus, quibusdam error
-      quasi neque natus. Sunt veniam aut fuga consequuntur debitis ea ratione.
+      <p>©2026 Deborah Oudin — Tous droits réservés </p>
+      <p>
+        Loop witch by{" "}
+        <a
+          href="https://www.youtube.com/@Gribz_Music"
+          target="_blank"
+          aria-label="Gribz music youtube"
+        >
+          Gribz
+        </a>{" "}
+        - ©2026 Tous droits réservés
+      </p>
     </footer>
   );
 }

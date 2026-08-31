@@ -5,18 +5,19 @@ import Footer from "../components/footer";
 import ContactForm from "../components/mailto";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faGit,
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-//Fonction pour la page d'accueil//
+//formulaire de contact pour me joindre via le composant ContactForm//
 function Contact() {
   return (
     <div>
       <Header />
       <p>Vous souhaitez me contacter?</p>
       <ContactForm />
+      
+      {/*lien vers mes pages linkedin et github*/}
       <li>
         <a
           href="https://www.linkedin.com/in/oudin-deborah/"

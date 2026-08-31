@@ -6,6 +6,8 @@ import Footer from "../components/footer";
 function Index() {
   return (
     <div>
+      <Header/>
+      
       <Footer />
     </div>
   );
