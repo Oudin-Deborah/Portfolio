@@ -6,7 +6,7 @@ import "./index.css";
 import "./assets/style/styleGlobal.sass";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Portfolio/">
       <App />
     </BrowserRouter>
   </StrictMode>,
