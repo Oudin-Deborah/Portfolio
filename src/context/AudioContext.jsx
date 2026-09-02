@@ -1,7 +1,7 @@
-import { createContext, useContext, useState, useRef } from "react";
+import { createContext, useState, useRef } from "react";
 import witchyLoop from "../assets/witchy_loop.wav";
 
-const audioContext = createContext();
+export const AudioContext = createContext();
 
 export function AudioProvider({ children }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,13 +17,9 @@ export function AudioProvider({ children }) {
   }
 
   return (
-    <audioContext.Provider value={{ isPlaying, toggleAudio }}>
+    <AudioContext.Provider value={{ isPlaying, toggleAudio }}>
       <audio ref={audioRef} src={witchyLoop} loop />
       {children}
-    </audioContext.Provider>
+    </AudioContext.Provider>
   );
-}
-
-export function useAudio() {
-  return useContext(AudioContext);
 }

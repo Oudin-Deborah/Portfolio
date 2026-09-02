@@ -2,13 +2,14 @@ import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 //Routes dans l'ordre de l'arbre DOM
+import { AudioProvider } from "./context/AudioContext";
+import AudioLoop from "../src/components/audioloop";
 import Welcome from "./pages/welcome";
 import Index from "./pages";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Error from "./pages/error";
-import AudioLoop from "../src/components/audioloop";
-import { AudioProvider } from "./context/AudioContent";
+
 function App() {
   return (
     <>
