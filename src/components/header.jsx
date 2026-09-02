@@ -1,6 +1,7 @@
 //Fonction pour le header visible sur toutes les pages du site//
 import { NavLink } from "react-router-dom";
 import "../assets/style/styleHeader.sass";
+import AudioLoop from "../components/audioloop";
 function Header() {
   return (
     <header className="Header">

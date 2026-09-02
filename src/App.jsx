@@ -7,15 +7,22 @@ import Index from "./pages";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Error from "./pages/error";
+import AudioLoop from "../src/components/audioloop";
+import { AudioProvider } from "./context/AudioContent";
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Welcome />} />
-      <Route path="/Index" element={<Index />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="*" element={<Error />} />
-    </Routes>
+    <>
+      <AudioProvider>
+        <AudioLoop />
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/Index" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </AudioProvider>
+    </>
   );
 }
 

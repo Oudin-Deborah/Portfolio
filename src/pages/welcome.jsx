@@ -2,8 +2,6 @@ import React from "react";
 import Footer from "../components/footer";
 import Logo from "../components/logo";
 import "../assets/style/styleWelcome.sass";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolume,faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
 import AudioLoop from "../components/audioloop";
 
 function Welcome() {
@@ -17,10 +15,11 @@ function Welcome() {
         </h2>
         <p className="Welcome__p">
           Pour plus d'immersion je vous invite à activer le son représenté par
-          l'icone <AudioLoop/> Ce site me représente, pas
-          seulement ce que je sais faire, mais qui je suis. <br /> Alors prennez
-          autant de plaisir à le découvrir que moi à vous l'offrir.
+          l'icone <AudioLoop /> Ce site me représente, pas seulement ce que je
+          sais faire, mais qui je suis. <br /> Alors prennez autant de plaisir à
+          le découvrir que moi à vous l'offrir. <br />
         </p>
+        <h2>Déborah, la sorcière 3.0</h2>
       </div>
 
       <Footer />

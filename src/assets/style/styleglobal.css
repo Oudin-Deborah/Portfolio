@@ -4,7 +4,7 @@ html {
   display: block;
   margin: 0;
   padding: 0;
-  background-image: url("../background_website.png");
+  background-image: url("../background_website.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,10 +12,14 @@ html {
   min-height: 100vh;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: Cinzel Decorative, serif;
 }
 
 p {
   font-family: Montserrat, sans-serif;
-}/*# sourceMappingURL=styleglobal.css.map */
+}
+
+.Audio__Button {
+  background-color: blanchedalmond;
+}/*# sourceMappingURL=styleGlobal.css.map */
