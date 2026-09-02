@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVolumeHigh, faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
 import { useAudio } from "../context/UseAudio";
 
+
+//fonction de loop audio, qui dépend de useAudio
 function AudioLoop() {
   const { isPlaying, toggleAudio } = useAudio();
 
