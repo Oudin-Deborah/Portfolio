@@ -12,14 +12,15 @@ html {
   min-height: 100vh;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .nav__link {
   font-family: Cinzel Decorative, serif;
+}
+
+.nav__link {
+  font-weight: bold;
+  font-size: large;
 }
 
 p {
   font-family: Montserrat, sans-serif;
-}
-
-.Audio__Button {
-  background-color: blanchedalmond;
 }/*# sourceMappingURL=styleGlobal.css.map */

@@ -1,1 +1,9 @@
-/*# sourceMappingURL=styleHeader.css.map */
+.Header__Nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 300px;
+  padding-top: 50px;
+  padding-right: 500px;
+}/*# sourceMappingURL=styleHeader.css.map */

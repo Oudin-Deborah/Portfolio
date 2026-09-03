@@ -1,0 +1,10 @@
+.Body__Contact {
+  background-image: url("../parchemin__welcome.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: auto;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=styleContact.css.map */
