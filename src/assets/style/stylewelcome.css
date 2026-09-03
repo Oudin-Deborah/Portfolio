@@ -1,8 +1,9 @@
-.Welcome__page {
+.Welcome__page, .Welcome__Wrapper, .Welcome__p {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .Logo_OD {
@@ -11,8 +12,20 @@
   height: auto;
 }
 
+.Welcome__Wrapper {
+  background-image: url("../parchemin__welcome.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: auto;
+  height: 1000px;
+}
+
+.Welcome__h2 {
+  padding-left: 10px;
+}
+
 .Welcome__p {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(255, 235, 205, 0.5);
-}/*# sourceMappingURL=stylewelcome.css.map */
+  width: 800px;
+  height: auto;
+}/*# sourceMappingURL=styleWelcome.css.map */

@@ -1,5 +1,4 @@
-//Fonction pour la page d'Index//
-import React from "react";
+import "../assets/style/styleContact.sass"
 import Header from "../components/header";
 import Footer from "../components/footer";
 import ContactForm from "../components/mailto";
@@ -12,10 +11,10 @@ import {
 //formulaire de contact pour me joindre via le composant ContactForm//
 function Contact() {
   return (
-    <div>
+    <section className="Body__Contact">
       <Header />
-      <p>Vous souhaitez me contacter?</p>
-      <ContactForm />
+      <h2>Vous souhaitez me contacter?</h2>
+      <ContactForm/>
       
       {/*lien vers mes pages linkedin et github*/}
       <li>
@@ -35,7 +34,7 @@ function Contact() {
         </a>
       </li>
       <Footer />
-    </div>
+    </section>
   );
 }
 
