@@ -12,7 +12,7 @@ html {
   min-height: 100vh;
 }
 
-h1, h2, h3, .nav__link {
+h1, h2, h3, .nav__link, .witch-room__hotspot {
   font-family: Cinzel Decorative, serif;
 }
 

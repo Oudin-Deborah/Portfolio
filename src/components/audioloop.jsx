@@ -3,7 +3,7 @@ import { faVolumeHigh, faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
 import { useAudio } from "../context/UseAudio";
 
 
-//fonction de loop audio, qui dépend de useAudio
+//fonction de loop audio qui fonctionne sur toutes les pages du site sans interruption
 function AudioLoop() {
   const { isPlaying, toggleAudio } = useAudio();
 

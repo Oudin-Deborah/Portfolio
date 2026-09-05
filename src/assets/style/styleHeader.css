@@ -6,4 +6,28 @@
   gap: 300px;
   padding-top: 50px;
   padding-right: 500px;
+}
+
+.Link__Index {
+  background-image: url("../index__parchemin.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1.5%;
+}
+
+.Link__About {
+  background-image: url("../about__parchemin.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1.5%;
+}
+
+.Link__Contact {
+  background-image: url("../contact__parchemin.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1.5%;
 }/*# sourceMappingURL=styleHeader.css.map */

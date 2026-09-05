@@ -1,12 +1,10 @@
 //Fonction pour le header visible sur toutes les pages du site//
 import { NavLink } from "react-router-dom";
 import "../assets/style/styleHeader.sass";
-import indexParchemin from "../assets/index__parchemin.webp"
 function Header() {
   return (
     <header className="Header">
       <nav className="Header__Nav">
-        <img src="{indexParchemin}" alt="" />
         <NavLink to="/Index" className="nav__link Link__Index">
           Accueil
         </NavLink>
