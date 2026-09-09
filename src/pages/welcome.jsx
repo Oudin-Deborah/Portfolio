@@ -1,7 +1,8 @@
 import Footer from "../components/footer";
 import Logo from "../components/logo";
 import "../assets/style/styleWelcome.sass";
-import { useAudio } from "../context/UseAudio";
+import { UseAudio } from "../context/UseAudio";
+import AudioLoop from "../components/audioloop";
 
 function Welcome() {
   return (
@@ -14,7 +15,7 @@ function Welcome() {
         </h2>
         <p className="Welcome__p">
           Pour plus d'immersion je vous invite à activer le son représenté par
-          l'icone <useAudio /> Ce site me représente, pas seulement ce que je
+          l'icone <AudioLoop /> Ce site me représente, pas seulement ce que je
           sais faire, mais qui je suis. <br /> Alors prennez autant de plaisir à
           le découvrir que moi à vous l'offrir. <br />
         </p>

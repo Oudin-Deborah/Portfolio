@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AudioContext } from "./AudioContext";
 
-export function useAudio() {
+export function UseAudio() {
   return useContext(AudioContext);
 }
