@@ -1,7 +1,8 @@
 //Fonction pour le footer visible sur toutes les pages du site//
+import "../assets/style/styleFooter.sass"
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <p>©2026 Deborah Oudin — Tous droits réservés </p>
       <p>
         Loop witch by{" "}

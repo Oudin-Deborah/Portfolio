@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../assets/style/styleContact.sass";
 //fonction de gestion du form d'envoi de mail//
 function ContactForm() {
   const [statut, setStatut] = useState(null); // null | "envoi" | "succes" | "erreur"
