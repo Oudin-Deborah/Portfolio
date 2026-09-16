@@ -12,7 +12,7 @@ html {
   min-height: 100vh;
 }
 
-h1, h2, h3, .nav__link, .witch-room__hotspot {
+h1, h2, h3, .nav__link, .witch-room__hotspot .interactive-element__label {
   font-family: "Cinzel Decorative", serif;
   font-size: 1rem;
   color: #f4d9a0;

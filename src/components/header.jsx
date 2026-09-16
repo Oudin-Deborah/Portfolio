@@ -11,9 +11,6 @@ function Header() {
         <NavLink to="/About" className="nav__link Link__About">
           A propos de moi
         </NavLink>
-        <NavLink to="/Contact" className="nav__link Link__Contact">
-          Contact
-        </NavLink>
       </nav>
     </header>
   );
