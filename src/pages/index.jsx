@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { useModal } from "../hooks/UseModal";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import InteractiveElement from "../components/InteractiveElement";
 import Modal from "../components/Modal";
+
 import "../assets/style/styleIndex.sass";
 function Index() {
+  const navigate = useNavigate();
   const { activeContent, openModal, closeModal } = useModal();
 
   const modalContents = {
