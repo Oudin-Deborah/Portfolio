@@ -4,17 +4,21 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import InteractiveElement from "../components/InteractiveElement";
 import Modal from "../components/Modal";
-
+import SkillsList from "../components/skills";
+import RecipesList from "../components/recipes";
+import GamesList from "../components/games";
 import "../assets/style/styleIndex.sass";
+import PortfolioList from "../components/porfolio";
+
 function Index() {
   const navigate = useNavigate();
   const { activeContent, openModal, closeModal } = useModal();
 
   const modalContents = {
-    portfolio: <div>{/* ... */}</div>,
-    games: <div>{/* ... */}</div>,
-    recipes: <div>{/* ... */}</div>,
-    tarot: <div>{/* ... */}</div>,
+    portfolio: <PortfolioList />,
+    games: <GamesList />,
+    recipes: <RecipesList />,
+    skills: <SkillsList />,
   };
 
   return (
@@ -41,10 +45,15 @@ function Index() {
         className="witch-room__hotspot witch-room__hotspot--recipes"
         onActivate={() => openModal("recipes")}
       />
-      <InteractiveElement
+      {/*<InteractiveElement
         label="Tarot"
         className="witch-room__hotspot witch-room__hotspot--tarot"
         onActivate={() => openModal("tarot")}
+      />*/}
+      <InteractiveElement
+        label="Compétences"
+        className="witch-room__hotspot witch-room__hotspot--skills"
+        onActivate={() => openModal("skills")}
       />
       {/*<InteractiveElement
         label="Easter egg"

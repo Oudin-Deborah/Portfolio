@@ -56,6 +56,12 @@
   width: 25%;
   height: 14%;
 }
+.witch-room__hotspot--skills {
+  top: 66%;
+  left: 47%;
+  width: 24%;
+  height: 14%;
+}
 .witch-room__hotspot--egg {
   top: 65%;
   left: 88%;
