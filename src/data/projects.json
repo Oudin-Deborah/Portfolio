@@ -1,18 +1,18 @@
 [
   {
-    "id": "witch-room",
+    "id": "Portfolio",
     "title": "Witch Room — Portfolio",
     "description": "Portfolio interactif en scène illustrée avec modales dynamiques.",
     "stack": ["React", "Vite", "Sass"],
-    "image": "/public/deborah_oudin_developpeuse_web.png",
+    "image": "deborah_oudin_developpeuse_web.png",
     "liveUrl": "https://oudin-deborah.github.io/Portfolio/",
     "repoUrl": "https://github.com/Oudin-Deborah/Portfolio",
     "featured": true
   },
   {
-    "id": "menu-builder",
-    "title": "Menu Builder",
-    "description": "Application de création de menus personnalisés.",
+    "id": "Kasa",
+    "title": "Kasa",
+    "description": "Creation d'un site de location de vacances",
     "stack": ["React", "Node"],
     "image": "/projects/menu-builder.webp",
     "liveUrl": "",

@@ -1,6 +1,7 @@
 //fonction de gestion des projets ajoutés dans data/projects affichés sur l'index//
 import projects from "../data/projects.json";
 import Carousel from "../components/carousel";
+import "../assets/style/stylePortfolio.sass";
 
 function PortfolioList() {
   return (
@@ -8,7 +9,7 @@ function PortfolioList() {
       items={projects}
       renderItem={(project) => (
         <div className="portfolio-card">
-          <img src={project.image} alt={project.title} />
+          <img src={project.image} alt={project.title} className="portfolio-card__image" />
           <h3>{project.title}</h3>
           <p>{project.description}</p>
           {project.liveUrl && (

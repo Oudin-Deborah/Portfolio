@@ -1,0 +1,63 @@
+.portfolio-card
+  &__image
+    width: 50%
+    aspect-ratio: 1 / 1
+    object-fit: cover
+    border-radius: 4px
+    display: block
+    margin: 0 auto
+    
+.carousel
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__track
+    width: 100%
+
+  &__arrow
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    font-family: "Cinzel Decorative", serif
+    color: #f4d9a0
+    background: transparent
+    border: 1px solid #f4d9a0
+    border-radius: 4px
+    width: 32px
+    height: 32px
+    font-size: 1.2rem
+    cursor: pointer
+    z-index: 2
+    transition: transform 0.2s ease, background 0.2s ease
+
+    &:hover
+      background: rgba(244, 217, 160, 0.15)
+      transform: translateY(-50%) scale(1.1) // ⬅️ garde le centrage vertical même au hover
+
+    &--prev
+      left: 0.5rem
+
+    &--next
+      right: 0.5rem
+
+  &__dots
+    display: flex
+    gap: 0.5rem
+    margin-top: 1rem
+
+.carousel__arrow
+  font-family: "Cinzel Decorative", serif
+  color: black
+  background: transparent
+  border: none
+  width: 32px
+  height: 32px
+  font-size: 3rem
+  cursor: pointer
+  transition: transform 0.2s ease, background 0.2s ease
+
+  &:hover
+    background: rgba(244, 217, 160, 0.15)
+    transform: scale(1.1)
