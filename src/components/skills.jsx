@@ -35,9 +35,27 @@ function SkillsModal() {
 
             {isOpen && (
               <ul className="skills-list__projects">
-                {relatedProjects.map((project) => (
-                  <li key={project.id}>{project.title}</li>
-                ))}
+                {relatedProjects.map((project) =>
+                  project.liveUrl ? (
+                    <li key={project.id}>
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="skills-list__project-link"
+                      >
+                        {project.title}
+                      </a>
+                    </li>
+                  ) : (
+                    <li
+                      key={project.id}
+                      className="skills-list__project-static"
+                    >
+                      {project.title}
+                    </li>
+                  ),
+                )}
               </ul>
             )}
           </li>
