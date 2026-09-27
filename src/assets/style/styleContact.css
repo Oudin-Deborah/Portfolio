@@ -1,46 +1,36 @@
-.Body__Contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  padding-top: 120px;
-  padding-bottom: 80px;
-  box-sizing: border-box;
+.contact-page__scroll {
+  background: linear-gradient(160deg, #1a1410, #2b1f14);
+  border: 2px solid #b8843f;
+  border-image: linear-gradient(135deg, #d4a24c, #6b4423) 1;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7), inset 0 0 60px rgba(184, 132, 63, 0.15);
+  color: #e8d4a8;
+  padding: 3rem;
 }
-.Body__Contact-parchment {
-  position: relative;
-  width: min(80vw, 800px);
-  max-height: 100%;
-  aspect-ratio: 900/1000;
-  background-image: url("../parchemin__welcome.webp");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 6% 8%;
-  box-sizing: border-box;
+.contact-page__title {
+  color: #d4a24c;
+  text-shadow: 0 0 12px rgba(212, 162, 76, 0.4);
 }
-.Body__Contact-parchment h2 {
-  color: #4a2f1c;
-  text-align: center;
-  margin-bottom: 1.5rem;
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #6b4423;
+  color: #e8d4a8;
 }
-.Body__Contact-parchment form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  gap: 0.9rem;
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(232, 212, 168, 0.5);
 }
-.Body__Contact-parchment form input,
-.Body__Contact-parchment form textarea {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 1rem;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d4a24c;
+  box-shadow: 0 0 8px rgba(212, 162, 76, 0.5);
+}
+.contact-form__submit {
+  background: linear-gradient(180deg, #6b4423, #3a2810);
+  border: 1px solid #d4a24c;
+  color: #e8d4a8;
+}
+.contact-form__submit:hover {
+  background: linear-gradient(180deg, #8a5a2b, #4a3315);
 }/*# sourceMappingURL=styleContact.css.map */

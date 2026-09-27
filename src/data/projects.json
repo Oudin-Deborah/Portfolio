@@ -2,7 +2,7 @@
   {
     "id": "Portfolio",
     "title": "Witch Room — Portfolio",
-    "description": "Portfolio interactif en scène illustrée avec modales dynamiques.",
+    "description": "Portfolio personnel interactif.",
     "stack": ["React", "Vite", "Sass"],
     "image": "deborah_oudin_developpeuse_web.png",
     "liveUrl": "https://oudin-deborah.github.io/Portfolio/",
@@ -12,9 +12,9 @@
   {
     "id": "Kasa",
     "title": "Kasa",
-    "description": "Creation d'un site de location de vacances",
-    "stack": ["React", "Node"],
-    "image": "/projects/menu-builder.webp",
+    "description": "Projet fictif d'un site de location de vacances",
+    "stack": ["HTML", "CSS"],
+    "image": "kasa_logo.webp",
     "liveUrl": "",
     "repoUrl": "",
     "featured": false
