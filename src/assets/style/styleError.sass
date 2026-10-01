@@ -1,0 +1,54 @@
+.Body__Error
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  text-align: center
+  box-sizing: border-box
+  padding: 2rem
+  gap: 0.5rem // resserre l'espacement vertical entre les éléments
+
+  .Logo
+    position: static
+    margin-bottom: 0.5rem
+
+  .error_section
+    margin: 3px
+    background-color: #f4d9a0
+    box-shadow: 0 0 5px rgba(255, 200, 120, 0.9), 0 0 10px rgba(255, 170, 60, 0.8), 0 0 20px rgba(230, 130, 30, 0.7), 0 0 40px rgba(180, 80, 20, 0.6)
+
+
+  h1
+    color: #f4d9a0
+    text-shadow: 0 0 5px rgba(255, 200, 120, 0.9), 0 0 10px rgba(255, 170, 60, 0.8), 0 0 20px rgba(230, 130, 30, 0.7), 0 0 40px rgba(180, 80, 20, 0.6)
+    letter-spacing: 2px
+    margin: 0
+
+  .error_P
+    max-width: 500px
+    margin: 0
+
+  &__link
+    display: inline-block
+    padding: 0.5rem 1.5rem
+    font-family: 'JetBrains Mono', monospace
+    font-size: 0.85rem
+    letter-spacing: 1px
+    text-transform: uppercase
+    text-decoration: none
+    color: #f4d9a0
+    background: linear-gradient(135deg, #6b3f1d, #4a2f1c)
+    border: 1px solid rgba(244, 217, 160, 0.4)
+    border-radius: 4px
+    transition: transform 0.2s ease, box-shadow 0.2s ease
+
+    &:hover
+      box-shadow: 0 0 12px rgba(230, 130, 30, 0.6)
+      transform: translateY(-1px)
+
+    &:focus
+      outline: 2px solid #b5651d
+      outline-offset: 2px

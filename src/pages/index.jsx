@@ -9,6 +9,7 @@ import RecipesList from "../components/recipes";
 import GamesList from "../components/games";
 import "../assets/style/styleIndex.sass";
 import PortfolioList from "../components/porfolio";
+import "../assets/style/styleSoundToggle.sass";
 
 function Index() {
   const navigate = useNavigate();
