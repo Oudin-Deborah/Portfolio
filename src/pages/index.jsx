@@ -9,6 +9,7 @@ import RecipesList from "../components/recipes";
 import GamesList from "../components/games";
 import "../assets/style/styleIndex.sass";
 import PortfolioList from "../components/porfolio";
+import "../assets/style/styleSoundToggle.sass";
 
 function Index() {
   const navigate = useNavigate();
@@ -35,16 +36,16 @@ function Index() {
         className="witch-room__hotspot witch-room__hotspot--portfolio"
         onActivate={() => openModal("portfolio")}
       />
-      <InteractiveElement
+      {/*<InteractiveElement
         label="Jeux préférés"
         className="witch-room__hotspot witch-room__hotspot--games"
         onActivate={() => openModal("games")}
-      />
-      <InteractiveElement
+      />*/}
+      {/*<InteractiveElement
         label="Mes recettes favorites"
         className="witch-room__hotspot witch-room__hotspot--recipes"
         onActivate={() => openModal("recipes")}
-      />
+      />*/}
       {/*<InteractiveElement
         label="Tarot"
         className="witch-room__hotspot witch-room__hotspot--tarot"

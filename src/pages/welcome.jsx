@@ -15,9 +15,11 @@ function Welcome() {
         </h2>
         <p className="Welcome__p">
           Pour plus d'immersion je vous invite à activer le son représenté par
-          l'icone <AudioLoop /> Ce site me représente, pas seulement ce que je
-          sais faire, mais qui je suis. <br /> Alors prennez autant de plaisir à
-          le découvrir que moi à vous l'offrir. <br />
+          l'icone en haut à gauche. <br />
+          Ce site sera mis à jour régulièrement, avec de nouvelles surprises qui
+          arriveront au fil du temps.
+          <br />
+          <span className="">Pour continuer votre navigation, cliquez sur mon logo!</span>
         </p>
         <h2>Déborah, la sorcière 3.0</h2>
       </div>

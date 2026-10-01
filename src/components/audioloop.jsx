@@ -9,10 +9,11 @@ function AudioLoop() {
 
   return (
     <button
+      className="sound-toggle"
       onClick={toggleAudio}
       aria-label={isPlaying ? "Couper le son" : "Activer le son"}
     >
-      <FontAwesomeIcon icon={isPlaying ? faVolumeXmark : faVolumeHigh} />
+      <FontAwesomeIcon icon={isPlaying ? faVolumeHigh : faVolumeXmark} />
     </button>
   );
 }
