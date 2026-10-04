@@ -6,8 +6,7 @@
     "stack": ["React", "Vite", "Sass"],
     "image": "deborah_oudin_developpeuse_web.png",
     "liveUrl": "https://oudin-deborah.github.io/Portfolio/",
-    "repoUrl": "https://github.com/Oudin-Deborah/Portfolio",
-    "featured": true
+    "repoUrl": "https://github.com/Oudin-Deborah/Portfolio"
   },
   {
     "id": "Kasa",
@@ -16,7 +15,15 @@
     "stack": ["HTML", "CSS"],
     "image": "kasa_logo.webp",
     "liveUrl": "",
-    "repoUrl": "",
-    "featured": false
+    "repoUrl": "https://github.com/Oudin-Deborah/P5_Kasa"
+  },
+  {
+    "id": "Sophie_Bluel",
+    "title": "Sophie Bluel",
+    "description": "Projet fictif d'optimisation d'un site de photographe",
+    "stack": ["HTML", "SEO"],
+    "image": "",
+    "liveUrl": "https://oudin-deborah.github.io/p4_optimisation/",
+    "repoUrl": "https://github.com/Oudin-Deborah/p4_optimisation"
   }
 ]

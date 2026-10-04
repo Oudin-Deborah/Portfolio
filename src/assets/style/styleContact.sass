@@ -16,7 +16,7 @@
     position: relative
     width: min(80vw, 800px)
     max-height: 100%
-    aspect-ratio: 900 / 1000
+    aspect-ratio: 900 / 1000 // à ajuster selon les dimensions réelles de parchemin_contact.png
     background-image: url("../parchemin_contact.png")
     background-size: contain
     background-position: center
@@ -25,7 +25,7 @@
     flex-direction: column
     align-items: center
     justify-content: flex-start
-    padding: 6% 8% // réduit de 15% à 8% pour laisser plus de largeur au contenu
+    padding: 6% 8%
     box-sizing: border-box
 
     h2
@@ -38,7 +38,7 @@
       display: flex
       flex-direction: column
       width: 100%
-      max-width: 500px // empêche le form de s'étirer à l'infini sur grand écran
+      max-width: 500px
       margin: 0 auto
       gap: 0.9rem
 
@@ -46,3 +46,71 @@
       textarea
         font-family: 'JetBrains Mono', monospace
         font-size: 1rem
+        color: #4a2f1c
+        background: transparent
+        border: none
+        border-bottom: 1.5px solid rgba(74, 47, 28, 0.4)
+        padding: 0.5rem 0.3rem
+        outline: none
+        width: 100%
+        box-sizing: border-box
+        transition: border-color 0.3s ease, box-shadow 0.3s ease
+
+        &::placeholder
+          color: rgba(74, 47, 28, 0.5)
+          font-style: italic
+
+        &:focus
+          border-bottom-color: #b5651d
+          box-shadow: 0 4px 8px -4px rgba(181, 101, 29, 0.6)
+
+      textarea
+        resize: vertical
+        min-height: 4.5rem
+
+      button
+        align-self: center
+        margin-top: 0.5rem
+        padding: 0.6rem 2.2rem
+        font-family: 'JetBrains Mono', monospace
+        font-size: 0.95rem
+        letter-spacing: 1px
+        text-transform: uppercase
+        color: #f4d9a0
+        background: linear-gradient(135deg, #6b3f1d, #4a2f1c)
+        border: 1px solid rgba(244, 217, 160, 0.4)
+        border-radius: 4px
+        cursor: pointer
+        transition: transform 0.2s ease, box-shadow 0.2s ease
+
+        &:hover:not(:disabled)
+          box-shadow: 0 0 12px rgba(230, 130, 30, 0.6)
+          transform: translateY(-1px)
+
+        &:disabled
+          opacity: 0.6
+          cursor: not-allowed
+
+      p
+        text-align: center
+        font-size: 0.85rem
+        color: #4a2f1c
+        margin-top: 0.5rem
+
+    ul
+      list-style: none
+      display: flex
+      flex-direction: row
+      gap: 1rem
+      justify-content: center
+      align-items: center
+      margin-top: 1.5rem
+      padding: 0
+
+    a
+      color: #6b3f1d
+      font-size: 1.4rem
+      transition: color 0.2s ease
+
+      &:hover
+        color: #b5651d

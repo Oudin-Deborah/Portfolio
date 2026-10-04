@@ -7,7 +7,7 @@ import "../assets/style/styleAbout.sass";
 //Fonction pour la page About//
 function About() {
   return (
-    <div>
+    <div className="about-page">
       <Header />
       <div className="about-page__scroll">
         <div className="about-content">
@@ -26,11 +26,12 @@ function About() {
             <h2>Une reconversion assumée</h2>
             <p>
               Autodidacte pour commencer, j'ai vite compris qu'il me fallait une
-              vraie formation de développeuse web si je voulais me faire une
-              place dans ce monde. Depuis, je tente de découvrir et d'en
-              apprendre un peu plus chaque jour en inspectant les sites internet
-              pour comprendre comment mettre toutes les possiblités au service
-              de vos besoins.
+              vraie formation de développeuse web, si je voulais me faire une
+              place dans ce monde. J'ai donc suivi le parcours de developpeuse
+              full-Stack avec OpenClassroom, depuis, je tente de découvrir et
+              d'en apprendre un peu plus chaque jour en inspectant les sites
+              internet pour comprendre comment mettre toutes les possiblités au
+              service de vos besoins.
             </p>
           </div>
 

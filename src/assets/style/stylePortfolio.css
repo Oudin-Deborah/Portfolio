@@ -1,3 +1,11 @@
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.portfolio-card a {
+  display: block;
+}
 .portfolio-card__image {
   width: 50%;
   aspect-ratio: 1/1;
