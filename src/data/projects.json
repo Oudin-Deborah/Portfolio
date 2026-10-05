@@ -13,7 +13,7 @@
     "title": "Kasa",
     "description": "Projet fictif d'un site de location de vacances",
     "stack": ["HTML", "CSS"],
-    "image": "kasa_logo.webp",
+    "image": "",
     "liveUrl": "",
     "repoUrl": "https://github.com/Oudin-Deborah/P5_Kasa"
   },
@@ -25,5 +25,23 @@
     "image": "",
     "liveUrl": "https://oudin-deborah.github.io/p4_optimisation/",
     "repoUrl": "https://github.com/Oudin-Deborah/p4_optimisation"
+  },
+  {
+    "id": "Booki",
+    "title": "Booki",
+    "description": "Projet fictif de creation de site de reservation de lieu de vacances",
+    "stack": ["HTML", "CSS"],
+    "image": "",
+    "liveUrl": "",
+    "repoUrl": "https://github.com/Oudin-Deborah/Booki_Project"
+  },
+  {
+    "id": "Grimoire",
+    "title": "Mon vieux Grimoire ",
+    "description": "Projet fictif de notation de livres",
+    "stack": ["Express, Node.js", "Mongo.db"],
+    "image": "",
+    "liveUrl": "",
+    "repoUrl": "https://github.com/Oudin-Deborah/P6_Mon-Vieux-Grimoire"
   }
 ]
