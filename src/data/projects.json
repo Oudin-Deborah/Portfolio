@@ -1,7 +1,7 @@
 [
   {
     "id": "Portfolio",
-    "title": "Witch Room — Portfolio",
+    "title": "Witch Room",
     "description": "Portfolio personnel interactif.",
     "stack": ["React", "Vite", "Sass"],
     "image": "deborah_oudin_developpeuse_web.png",
@@ -13,16 +13,16 @@
     "title": "Kasa",
     "description": "Projet fictif d'un site de location de vacances",
     "stack": ["HTML", "CSS"],
-    "image": "",
+    "image": "Kasa_img.webp",
     "liveUrl": "",
     "repoUrl": "https://github.com/Oudin-Deborah/P5_Kasa"
   },
   {
-    "id": "Sophie_Bluel",
-    "title": "Sophie Bluel",
+    "id": "Nina_Carducci",
+    "title": "Nina Carducci",
     "description": "Projet fictif d'optimisation d'un site de photographe",
     "stack": ["HTML", "SEO"],
-    "image": "",
+    "image": "Nina_Carducci.webp",
     "liveUrl": "https://oudin-deborah.github.io/p4_optimisation/",
     "repoUrl": "https://github.com/Oudin-Deborah/p4_optimisation"
   },
@@ -31,7 +31,7 @@
     "title": "Booki",
     "description": "Projet fictif de creation de site de reservation de lieu de vacances",
     "stack": ["HTML", "CSS"],
-    "image": "",
+    "image": "Booki.webp",
     "liveUrl": "",
     "repoUrl": "https://github.com/Oudin-Deborah/Booki_Project"
   },
@@ -39,8 +39,8 @@
     "id": "Grimoire",
     "title": "Mon vieux Grimoire ",
     "description": "Projet fictif de notation de livres",
-    "stack": ["Express, Node.js", "Mongo.db"],
-    "image": "",
+    "stack": ["Express", "Node.js", "Mongo.db"],
+    "image": "mon_vieux_grimoire.webp",
     "liveUrl": "",
     "repoUrl": "https://github.com/Oudin-Deborah/P6_Mon-Vieux-Grimoire"
   }

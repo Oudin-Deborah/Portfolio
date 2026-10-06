@@ -100,11 +100,13 @@
   list-style: none;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 10rem;
   justify-content: center;
   align-items: center;
   margin-top: 1.5rem;
   padding: 0;
+  position: relative;
+  z-index: 5;
 }
 .Body__Contact-parchment a {
   color: #6b3f1d;
