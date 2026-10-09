@@ -14,6 +14,9 @@
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
   font-size: 0.9rem;
   pointer-events: none;
+  color: #f4d9a0;
+  text-shadow: none;
+  -webkit-text-stroke: #f4d9a0 !important;
 }
 
 .witch-room {
@@ -27,10 +30,10 @@
   position: absolute;
 }
 .witch-room__hotspot--contact {
-  top: 35%;
+  top: 38%;
   left: 44%;
   width: 10%;
-  height: 53%;
+  height: 35%;
 }
 .witch-room__hotspot--portfolio {
   top: 40%;
@@ -57,10 +60,10 @@
   height: 14%;
 }
 .witch-room__hotspot--skills {
-  top: 66%;
-  left: 47%;
-  width: 24%;
-  height: 14%;
+  top: 58%;
+  left: 52%;
+  width: 13%;
+  height: 19%;
 }
 .witch-room__hotspot--egg {
   top: 65%;

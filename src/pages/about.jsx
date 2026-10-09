@@ -7,7 +7,7 @@ import "../assets/style/styleAbout.sass";
 //Fonction pour la page About//
 function About() {
   return (
-    <div>
+    <div className="about-page">
       <Header />
       <div className="about-page__scroll">
         <div className="about-content">
@@ -18,7 +18,10 @@ function About() {
             <p>
               Je suis une accro aux technologies depuis toute petite (merci Papa
               !) Mes premiers souvenirs remontent à une époque où il fallait
-              encore insérer une disquette pour lancer un jeu en pixel.
+              encore insérer une disquette pour jouer à un jeu totalement
+              pixélisé. Les joies des premières lignes de codes à l'age de 8 ans
+              sur un terminal à l'aide d'un énorme livre tout ça pour changer la
+              couleur de la police de caractère.
             </p>
           </div>
 
@@ -26,11 +29,12 @@ function About() {
             <h2>Une reconversion assumée</h2>
             <p>
               Autodidacte pour commencer, j'ai vite compris qu'il me fallait une
-              vraie formation de développeuse web si je voulais me faire une
-              place dans ce monde. Depuis, je tente de découvrir et d'en
-              apprendre un peu plus chaque jour en inspectant les sites internet
-              pour comprendre comment mettre toutes les possiblités au service
-              de vos besoins.
+              vraie formation de développeuse web, si je voulais me faire une
+              place dans ce monde. J'ai donc suivi le parcours de developpeuse
+              full-Stack avec OpenClassroom, depuis, je tente de découvrir et
+              d'en apprendre un peu plus chaque jour en inspectant les sites
+              internet et en codant encore et encore pour comprendre comment
+              mettre toutes les possiblités au service de vos besoins.
             </p>
           </div>
 
@@ -39,8 +43,9 @@ function About() {
             <p>
               Je ne me limite pas à la tech et au code : je suis aussi une
               grande fan de cuisine, de jeux vidéo et d'onglerie. J'ai besoin de
-              créativité et de challenge au quotidien au risque de tourner
-              rond...
+              créativité et de challenge au quotidien au risque de tourner rond,
+              voilà pourquoi je continue d'apprendre d'autres langages, et de me
+              perfectionner au quotidien dans ceux que je connais déjà!
             </p>
           </div>
 

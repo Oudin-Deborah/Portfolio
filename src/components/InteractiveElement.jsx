@@ -1,4 +1,4 @@
-/*Fonction interactive pour l'affichage des noms sur la page principale */
+/*Fonction pour l'affichage des noms sur la page principale */
 
 function InteractiveElement({
   label,

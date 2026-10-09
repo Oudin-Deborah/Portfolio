@@ -1,5 +1,6 @@
 .about-page {
   position: relative;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,7 +31,7 @@
 .about-page__scroll {
   position: relative;
   width: min(90%, 650px);
-  background-image: url("../parchemin__welcome.webp");
+  background-image: url("../parchemin__welcome_vertical.webp");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding: 5rem 4rem;
@@ -40,7 +41,7 @@
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .about-content__title {
   text-align: center;
@@ -60,6 +61,7 @@
   color: #3a2a1a;
 }
 .about-content__contact-link {
+  background-color: #3a2a1a;
   color: #8a5a2b;
   text-decoration: underline;
   font-weight: 600;

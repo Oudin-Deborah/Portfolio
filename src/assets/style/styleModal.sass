@@ -1,3 +1,5 @@
+@use "sass:map"
+
 .modal-overlay
   position: fixed
   top: 0
@@ -12,22 +14,27 @@
 
 .modal-content
   position: relative
-  width: min(85vw, 600px)
-  max-height: 80vh
-  overflow-y: auto
+  width: min(90vw, 700px)
+  aspect-ratio: 1000 / 702
+  max-height: 90vh
   background-image: url("../parchemin__welcome.webp")
-  background-size: cover
+  background-size: contain
   background-position: center
   background-repeat: no-repeat
   color: #4a2f1c
-  padding: 3rem 2.5rem
+  padding: 8% 10%
   box-sizing: border-box
-  border-radius: 4px
-  box-shadow: 0 0 40px rgba(230, 130, 30, 0.4)
+  display: flex
+  flex-direction: column
 
   &:focus
     outline: 2px solid #b5651d
     outline-offset: 4px
+
+  &__inner
+    overflow-y: auto
+    flex: 1
+    min-height: 0
 
 .modal-close
   position: absolute
