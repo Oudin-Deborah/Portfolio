@@ -1,26 +1,17 @@
-@use "sass:map"
+@use "variables" as *
+@use "mixins" as *
 
-.Body__Contact
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  width: 100%
-  height: 100vh
-  overflow: hidden
+.contact-page
+  @include full-page
   padding-top: 120px
   padding-bottom: 80px
-  box-sizing: border-box
 
-  &-parchment
+  &__parchment
+    @include parchment-bg("../parchemin_contact.webp")
     position: relative
     width: min(80vw, 800px)
     max-height: 100%
-    aspect-ratio: 900 / 1000 // à ajuster selon les dimensions réelles de parchemin_contact.png
-    background-image: url("../parchemin_contact.png")
-    background-size: contain
-    background-position: center
-    background-repeat: no-repeat
+    aspect-ratio: 900 / 1000 // à ajuster selon les dimensions réelles de parchemin_contact.webp
     display: flex
     flex-direction: column
     align-items: center
@@ -28,8 +19,7 @@
     padding: 6% 8%
     box-sizing: border-box
 
-    h2
-      color: #4a2f1c
+    h1
       text-align: center
       margin-bottom: 1.5rem
 
@@ -44,12 +34,12 @@
 
       input,
       textarea
-        font-family: 'JetBrains Mono', monospace
+        font-family: $font-mono
         font-size: 1rem
-        color: #4a2f1c
+        color: $ink
         background: transparent
         border: none
-        border-bottom: 1.5px solid rgba(74, 47, 28, 0.4)
+        border-bottom: 1.5px solid rgba($ink, 0.4)
         padding: 0.5rem 0.3rem
         outline: none
         width: 100%
@@ -57,35 +47,25 @@
         transition: border-color 0.3s ease, box-shadow 0.3s ease
 
         &::placeholder
-          color: rgba(74, 47, 28, 0.5)
+          color: rgba($ink, 0.5)
           font-style: italic
 
         &:focus
-          border-bottom-color: #b5651d
-          box-shadow: 0 4px 8px -4px rgba(181, 101, 29, 0.6)
+          border-bottom-color: $accent
+          box-shadow: 0 4px 8px -4px rgba($accent, 0.6)
 
       textarea
         resize: vertical
         min-height: 4.5rem
 
       button
+        @include button-wood
         align-self: center
         margin-top: 0.5rem
         padding: 0.6rem 2.2rem
-        font-family: 'JetBrains Mono', monospace
+        font-family: $font-mono
         font-size: 0.95rem
-        letter-spacing: 1px
         text-transform: uppercase
-        color: #f4d9a0
-        background: linear-gradient(135deg, #6b3f1d, #4a2f1c)
-        border: 1px solid rgba(244, 217, 160, 0.4)
-        border-radius: 4px
-        cursor: pointer
-        transition: transform 0.2s ease, box-shadow 0.2s ease
-
-        &:hover:not(:disabled)
-          box-shadow: 0 0 12px rgba(230, 130, 30, 0.6)
-          transform: translateY(-1px)
 
         &:disabled
           opacity: 0.6
@@ -94,9 +74,10 @@
       p
         text-align: center
         font-size: 0.85rem
-        color: #4a2f1c
+        color: $ink
         margin-top: 0.5rem
 
+    // Liens LinkedIn et GitHub //
     ul
       list-style: none
       display: flex
@@ -110,9 +91,9 @@
       z-index: 5
 
     a
-      color: #6b3f1d
+      color: $brown-mid
       font-size: 1.4rem
       transition: color 0.2s ease
 
       &:hover
-        color: #b5651d
+        color: $accent

@@ -1,28 +1,150 @@
-@use "sass:map"
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+// Styles présents sur toutes les pages : base, typographie, logo, header, footer, bouton son
+@use "variables" as *
+@use "mixins" as *
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+
+:root
+  --footer-height: 3.5rem
 
 html
-    display: block
-    margin: 0
-    padding: 0
-    background-image: url("../background_website.webp")
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-    background-attachment: fixed
-    min-height: 100vh
+  display: block
+  margin: 0
+  padding: 0
+  background-color: #000
+  min-height: 100vh
 
-//Fonts//
+// Image de fond : s'arrête au-dessus du footer
+html::before
+  content: ""
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: calc(100vh - var(--footer-height))
+  background-image: url("../background_website.webp")
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  z-index: -1
 
-h1,h2,h3,.nav__link, .witch-room__hotspot .interactive-element__label
-  font-family: 'Cinzel Decorative', serif
+// Typographie //
+
+// Titres, nav et labels des hotspots : or avec halo, prévus pour le fond sombre de la scène
+h1, h2, h3, .header__link, .witch-room__hotspot .interactive-element__label
+  font-family: $font-title
   font-size: 1rem
-  color: #f4d9a0
-  text-shadow: 0 0 5px rgba(255, 200, 120, 0.9), 0 0 10px rgba(255, 170, 60, 0.8), 0 0 20px rgba(230, 130, 30, 0.7), 0 0 40px rgba(180, 80, 20, 0.6), 0 0 70px rgba(140, 50, 10, 0.4)
+  color: $gold
+  text-shadow: $glow-text
   letter-spacing: 2px
-  //
   -webkit-text-stroke: 1px rgba(40, 20, 10, 0.6)
 
+.header__link
+  color: $nav-ink
+  text-shadow: none
+  -webkit-text-stroke: 0
+  font-weight: 700
+
+.witch-room__hotspot .interactive-element__label
+  -webkit-text-stroke: 0
+
+// Exception : titres posés sur parchemin (classe .parchment à placer sur les conteneurs concernés)
+// On retire le halo et le contour, qui flouteraient le texte sombre, et on passe en gras
+.parchment
+  h1, h2, h3
+    color: $title-ink
+    text-shadow: none
+    -webkit-text-stroke: 0
+    font-weight: 700
+
 p
-    font-family: Montserrat, sans-serif
+  font-family: $font-body
+
+// Logo (welcome et 404) //
+
+.logo__image
+  width: min(100%, 280px)
+  height: auto
+
+// Header //
+
+.header
+  &__nav
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 10
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    padding: 50px 5% 0
+
+  // La typographie des liens est définie plus haut, avec les titres
+  &__link
+    padding: 1.5%
+
+    &--index
+      @include parchment-bg("../index__parchemin.webp")
+
+    &--about
+      @include parchment-bg("../about__parchemin.webp")
+
+// Footer //
+
+.footer
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+  height: var(--footer-height)
+  z-index: 10
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: 0.2rem
+  background: #000
+  color: #e8d5b5
+  text-align: center
+  font-size: 0.75rem
+  box-sizing: border-box
+
+  p
+    margin: 0 // les marges par défaut des <p> gonflaient la hauteur
+
+  a
+    color: $gold // le bleu/violet par défaut est illisible sur noir
+
+    &:hover
+      color: $accent
+
+// Bouton son //
+
+.sound-toggle
+  position: fixed
+  top: 1rem
+  left: 1rem
+  z-index: 50
+  width: 2.5rem
+  height: 2.5rem
+  display: flex
+  align-items: center
+  justify-content: center
+  background: rgba(20, 10, 5, 0.6)
+  border: 1px solid rgba($gold, 0.3)
+  border-radius: 50%
+  color: $gold
+  font-size: 1.1rem
+  cursor: pointer
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease
+
+  &:hover
+    background: rgba($ink, 0.8)
+    box-shadow: 0 0 12px rgba(230, 130, 30, 0.5)
+
+  &:focus
+    @include focus-ring
+
+  &:active
+    transform: scale(0.95)
