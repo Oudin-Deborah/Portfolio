@@ -1,11 +1,11 @@
-const Recipes = ["Poulet au curry", "Pates au lardon", "chocolat"];
+const recipes = ["Poulet au curry", "Pates au lardon", "chocolat"];
 
 function RecipesList() {
   return (
-    <ul className="Recipes-list">
-      {Recipes.map((Recipe) => (
-        <li key={Recipe} className="Recipes-list__item">
-          {Recipe}
+    <ul className="recipes-list">
+      {recipes.map((recipe) => (
+        <li key={recipe} className="recipes-list__item">
+          {recipe}
         </li>
       ))}
     </ul>

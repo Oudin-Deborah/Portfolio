@@ -1,5 +1,6 @@
 import { createContext, useState, useRef } from "react";
-import witchyLoop from "../assets/witchy_loop.wav";
+import witchyLoopOgg from "../assets/witchy_loop.ogg";
+import witchyLoopMp3 from "../assets/witchy_loop.mp3";
 
 
 //gestion du toggle, 
@@ -20,7 +21,11 @@ export function AudioProvider({ children }) {
 
   return (
     <AudioContext.Provider value={{ isPlaying, toggleAudio }}>
-      <audio ref={audioRef} src={witchyLoop} loop />
+      {/* Opus en priorité (plus léger), MP3 en secours pour les navigateurs sans Ogg */}
+      <audio ref={audioRef} loop>
+        <source src={witchyLoopOgg} type="audio/ogg; codecs=opus" />
+        <source src={witchyLoopMp3} type="audio/mpeg" />
+      </audio>
       {children}
     </AudioContext.Provider>
   );

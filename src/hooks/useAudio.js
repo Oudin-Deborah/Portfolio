@@ -1,7 +1,6 @@
 import { useContext } from "react";
-import { AudioContext } from "./AudioContext";
-import "../assets/style/styleSoundToggle.sass";
+import { AudioContext } from "../context/AudioContext";
 
-export function UseAudio() {
+export function useAudio() {
   return useContext(AudioContext);
 }

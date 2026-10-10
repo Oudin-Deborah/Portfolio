@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../assets/style/styleContact.sass";
 //fonction de gestion du form d'envoi de mail//
 function ContactForm() {
   const [statut, setStatut] = useState(null); // null | "envoi" | "succes" | "erreur"
@@ -30,9 +29,10 @@ function ContactForm() {
   //form//
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="nom" placeholder="Ton nom" required />
-      <input type="email" name="email" placeholder="Ton email" required />
-      <textarea name="message" placeholder="Ton message" required />
+      <input type="text" name="nom" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre email" required />
+      <textarea name="message" placeholder="Votre message" required />
+      
 
       <button type="submit" disabled={statut === "envoi"}>
         {statut === "envoi" ? "Envoi..." : "Envoyer"}

@@ -1,7 +1,6 @@
 //fonction de gestion des projets ajoutés dans data/projects affichés sur l'index//
 import projects from "../data/projects.json";
-import Carousel from "../components/carousel";
-import "../assets/style/stylePortfolio.sass";
+import Carousel from "./Carousel";
 
 function PortfolioList() {
   return (

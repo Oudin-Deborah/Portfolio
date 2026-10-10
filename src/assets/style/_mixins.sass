@@ -1,0 +1,39 @@
+@use "variables" as *
+
+// Page plein écran, contenu centré (welcome, contact, 404)
+@mixin full-page
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  box-sizing: border-box
+
+// Image de parchemin en fond, entièrement visible
+@mixin parchment-bg($image)
+  background-image: url($image)
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+
+// Bouton ou lien « bois » : police, taille et padding restent à définir à l'usage
+@mixin button-wood
+  display: inline-block
+  color: $gold
+  background: linear-gradient(135deg, $brown-mid, $ink)
+  border: 1px solid rgba($gold, 0.4)
+  border-radius: 4px
+  letter-spacing: 1px
+  text-decoration: none
+  cursor: pointer
+  transition: transform 0.2s ease, box-shadow 0.2s ease
+
+  &:hover:not(:disabled)
+    box-shadow: 0 0 12px rgba(230, 130, 30, 0.6)
+    transform: translateY(-1px)
+
+@mixin focus-ring($offset: 2px)
+  outline: 2px solid $accent
+  outline-offset: $offset

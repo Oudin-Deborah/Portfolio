@@ -1,11 +1,8 @@
-@use "sass:map"
+// Scène de la sorcière : zones cliquables posées sur l'image de fond
+// La typographie des labels est définie dans styleGlobal.sass
 
 .interactive-element
   position: absolute
-  width: 100%
-  height: 100%
-  top: 0
-  left: 0
 
   &__label
     position: absolute
@@ -13,61 +10,49 @@
     left: 50%
     transform: translate(-50%, -50%)
     white-space: nowrap
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8)
-    font-size: 0.9rem
     pointer-events: none
-    color: #f4d9a0
-    text-shadow: none
-    -webkit-text-stroke:#f4d9a0 !important
 
-.witch-room
-  position: relative
+// Position et taille de chaque zone, en pourcentages
+.witch-room__hotspot
+  &--contact
+    top: 38%
+    left: 44%
+    width: 10%
+    height: 35%
 
-  &__background
-    width: 100%
-    display: block
+  &--portfolio
+    top: 40%
+    left: 23%
+    width: 10%
+    height: 30%
 
-  &__hotspot
-    position: absolute
+  &--skills
+    top: 58%
+    left: 52%
+    width: 13%
+    height: 19%
 
-    &--contact
-     top: 38%
-     left: 44%
-     width: 10%
-     height: 35%
+  // Zones prévues, pour l'instant commentées dans pages/index.jsx
+  &--games
+    top: 32%
+    left: 65%
+    width: 9%
+    height: 27%
 
-    &--portfolio
-     top: 40%
-     left: 23%
-     width: 10%
-     height: 30%
+  &--recipes
+    top: 43%
+    left: 35%
+    width: 8%
+    height: 37%
 
-    &--games
-     top: 32%
-     left: 65%
-     width: 9%
-     height: 27%
+  &--tarot
+    top: 77%
+    left: 35%
+    width: 25%
+    height: 14%
 
-    &--recipes
-     top: 43%
-     left: 35%
-     width: 8%
-     height: 37%
-
-    &--tarot
-     top: 77%
-     left: 35%
-     width: 25%
-     height: 14%
-
-    &--skills
-     top: 58%
-     left: 52%
-     width: 13%
-     height: 19%
-     
-    &--egg
-      top: 65%
-      left: 88%
-      width: 6%
-      height: 10%
+  &--egg
+    top: 65%
+    left: 88%
+    width: 6%
+    height: 10%

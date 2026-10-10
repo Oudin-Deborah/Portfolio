@@ -1,8 +1,7 @@
 import { useState } from "react";
 import projects from "../data/projects.json";
-import "../assets/style/styleSkills.sass";
 
-function SkillsModal() {
+function SkillsList() {
   const [expandedSkill, setExpandedSkill] = useState(null);
 
   // Liste des stacks uniques, dérivée des projets — pas de duplication de données
@@ -65,4 +64,4 @@ function SkillsModal() {
   );
 }
 
-export default SkillsModal;
+export default SkillsList;

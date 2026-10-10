@@ -1,7 +1,9 @@
-//Fonction pour la page d'Index//
+//Imports de la page À propos//
 import { NavLink } from "react-router-dom";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../assets/style/styleAbout.sass";
 
 //Fonction pour la page About//
@@ -9,47 +11,55 @@ function About() {
   return (
     <div className="about-page">
       <Header />
-      <div className="about-page__scroll">
+      <main className="about-page__scroll parchment">
         <div className="about-content">
-          <h1 className="about-content__title">À propos de moi</h1>
+          <header className="about-content__header">
+            <NavLink
+              to="/index"
+              className="about-content__back"
+              aria-label="Retour à la scène"
+              title="Retour à la scène"
+            >
+              <FontAwesomeIcon icon={faArrowLeft} />
+            </NavLink>
+            <h1 className="about-content__title">À propos de moi</h1>
+          </header>
 
-          <div>
+          <section>
             <h2>Mon parcours</h2>
             <p>
-              Je suis une accro aux technologies depuis toute petite (merci Papa
-              !) Mes premiers souvenirs remontent à une époque où il fallait
-              encore insérer une disquette pour jouer à un jeu totalement
-              pixélisé. Les joies des premières lignes de codes à l'age de 8 ans
-              sur un terminal à l'aide d'un énorme livre tout ça pour changer la
-              couleur de la police de caractère.
+              Je suis accro aux technologies depuis toute petite (merci Papa !).
+              Mes premiers souvenirs : insérer une disquette pour lancer un jeu
+              totalement pixélisé, puis, à l'âge de 8 ans, mes premières lignes
+              de code sur un terminal, avec un énorme livre, tout ça pour
+              changer la couleur de la police.
             </p>
-          </div>
+          </section>
 
-          <div>
+          <section>
             <h2>Une reconversion assumée</h2>
             <p>
-              Autodidacte pour commencer, j'ai vite compris qu'il me fallait une
-              vraie formation de développeuse web, si je voulais me faire une
-              place dans ce monde. J'ai donc suivi le parcours de developpeuse
-              full-Stack avec OpenClassroom, depuis, je tente de découvrir et
-              d'en apprendre un peu plus chaque jour en inspectant les sites
-              internet et en codant encore et encore pour comprendre comment
-              mettre toutes les possiblités au service de vos besoins.
+              Autodidacte au départ, j'ai vite compris qu'il me fallait une
+              vraie formation pour me faire une place dans ce monde. J'ai donc
+              suivi le parcours de développeuse full-stack avec OpenClassrooms.
+              Depuis, j'apprends chaque jour en inspectant des sites et en
+              codant encore et encore, pour comprendre comment mettre toutes les
+              possibilités au service de vos besoins.
             </p>
-          </div>
+          </section>
 
-          <div>
+          <section>
             <h2>Mais encore</h2>
             <p>
-              Je ne me limite pas à la tech et au code : je suis aussi une
-              grande fan de cuisine, de jeux vidéo et d'onglerie. J'ai besoin de
-              créativité et de challenge au quotidien au risque de tourner rond,
-              voilà pourquoi je continue d'apprendre d'autres langages, et de me
-              perfectionner au quotidien dans ceux que je connais déjà!
+              Je ne me limite pas à la tech : je suis aussi une grande fan de
+              cuisine, de jeux vidéo et d'onglerie. J'ai besoin de créativité et
+              de challenge au risque de tourner en rond, c'est pourquoi
+              j'apprends d'autres langages tout en me perfectionnant dans ceux
+              que je connais déjà !
             </p>
-          </div>
+          </section>
 
-          <div>
+          <section>
             <h2>Et vous dans tout ça ?</h2>
             <p>
               Vous avez un projet ? Vous ne savez pas comment le mettre en place
@@ -57,10 +67,11 @@ function About() {
               <NavLink to="/contact" className="about-content__contact-link">
                 envoyez-moi un message
               </NavLink>
+              .
             </p>
-          </div>
+          </section>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );

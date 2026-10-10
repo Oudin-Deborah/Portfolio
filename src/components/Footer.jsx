@@ -1,5 +1,4 @@
 //Fonction pour le footer visible sur toutes les pages du site//
-import "../assets/style/styleFooter.sass"
 function Footer() {
   return (
     <footer className="footer">

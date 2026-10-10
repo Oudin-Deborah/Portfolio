@@ -1,15 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { useModal } from "../hooks/UseModal";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import { useModal } from "../hooks/useModal";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import InteractiveElement from "../components/InteractiveElement";
 import Modal from "../components/Modal";
-import SkillsList from "../components/skills";
-import RecipesList from "../components/recipes";
-import GamesList from "../components/games";
+import SkillsList from "../components/SkillsList";
+import RecipesList from "../components/RecipesList";
+import GamesList from "../components/GamesList";
 import "../assets/style/styleIndex.sass";
-import PortfolioList from "../components/porfolio";
-import "../assets/style/styleSoundToggle.sass";
+import PortfolioList from "../components/PortfolioList";
 
 function Index() {
   const navigate = useNavigate();

@@ -53,19 +53,19 @@ function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
 
   return createPortal(
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal" onClick={onClose}>
       <div
-        className="modal-content"
+        className="modal__content"
         role="dialog"
         aria-modal="true"
         tabIndex={-1}
         ref={modalRef}
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="modal-close" onClick={onClose} aria-label="Fermer">
+        <button className="modal__close" onClick={onClose} aria-label="Fermer">
           &times;
         </button>
-        {children}
+        <div className="modal__inner">{children}</div>
       </div>
     </div>,
     document.body,
