@@ -12,6 +12,8 @@ function PortfolioList() {
             src={project.image}
             alt={`Aperçu du projet ${project.title}`}
             className="portfolio-card__image"
+            loading="lazy"
+            decoding="async"
           />
           <div className="portfolio-card__body">
             <h3>{project.title}</h3>

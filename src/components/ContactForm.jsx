@@ -81,12 +81,17 @@ function ContactForm() {
         {statut === "envoi" ? "Envoi..." : "Envoyer"}
       </button>
 
-      {statut === "succes" && (
-        <p role="status">Message envoyé, merci ! Retour à l'accueil…</p>
-      )}
-      {statut === "erreur" && (
-        <p role="alert">Une erreur est survenue, veuillez réessayer.</p>
-      )}
+      {/* Les deux zones de message restent dans la page, vides : un lecteur d'écran
+          n'annonce de façon fiable que le texte ajouté dans une zone déjà présente */}
+      <div className="contact-form__feedback">
+        <p role="status">
+          {statut === "succes" && "Message envoyé, merci ! Retour à l'accueil…"}
+        </p>
+        <p role="alert">
+          {statut === "erreur" &&
+            "Une erreur est survenue, veuillez réessayer."}
+        </p>
+      </div>
     </form>
   );
 }

@@ -30,7 +30,7 @@ html
   display: block
   margin: 0
   padding: 0
-  background-color: #000
+  background-color: $black
   min-height: 100vh
 
 body
@@ -71,7 +71,7 @@ h1, h2, h3, .header__link, .witch-room__hotspot .interactive-element__label
   color: $gold
   text-shadow: $glow-text
   letter-spacing: 2px
-  -webkit-text-stroke: 1px rgba(40, 20, 10, 0.6)
+  -webkit-text-stroke: 1px rgba($stroke, 0.6)
 
 .header__link
   color: $nav-ink
@@ -184,8 +184,8 @@ p
   align-items: center
   justify-content: center
   gap: 0.2rem
-  background: #000
-  color: #e8d5b5
+  background: $black
+  color: $footer-text
   text-align: center
   font-size: 0.75rem
 
@@ -213,7 +213,7 @@ p
   display: flex
   align-items: center
   justify-content: center
-  background: rgba(20, 10, 5, 0.6)
+  background: rgba($veil, 0.6)
   border: 1px solid rgba($gold, 0.3)
   border-radius: 50%
   color: $gold
@@ -223,7 +223,7 @@ p
 
   &:hover
     background: rgba($ink, 0.8)
-    box-shadow: 0 0 12px rgba(230, 130, 30, 0.5)
+    box-shadow: 0 0 12px rgba($glow, 0.5)
 
   &:focus
     @include focus-ring
