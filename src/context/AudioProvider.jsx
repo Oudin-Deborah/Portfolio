@@ -1,11 +1,10 @@
-import { createContext, useState, useRef } from "react";
+import { useState, useRef } from "react";
+import { AudioContext } from "./AudioContext";
 import witchyLoopOgg from "../assets/witchy_loop.ogg";
 import witchyLoopMp3 from "../assets/witchy_loop.mp3";
 
 
-//gestion du toggle, 
-export const AudioContext = createContext();
-
+// Fournit l'état du son et le lecteur audio à tout le site
 export function AudioProvider({ children }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);

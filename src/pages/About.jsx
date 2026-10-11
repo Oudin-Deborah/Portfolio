@@ -5,9 +5,12 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../assets/style/styleAbout.sass";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 //Fonction pour la page About//
 function About() {
+  usePageTitle("À propos — Déborah Oudin, développeuse Full Stack");
+
   return (
     <div className="about-page">
       <Header />

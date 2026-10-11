@@ -16,6 +16,10 @@
   @include mobile
     --header-height: 5rem
 
+  // Petits téléphones : la première ligne du footer passe sur deux lignes
+  @media (max-width: 380px)
+    --footer-height: 4.5rem
+
 *, *::before, *::after
   box-sizing: border-box
 

@@ -4,9 +4,12 @@ import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 //formulaire de contact pour me joindre via le composant ContactForm//
 function Contact() {
+  usePageTitle("Contact — Déborah Oudin, développeuse Full Stack");
+
   return (
     <div className="contact-page">
       <Header />
