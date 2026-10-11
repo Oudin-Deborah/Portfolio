@@ -38,6 +38,19 @@
   @media (max-width: 1024px)
     @content
 
+// Tablette verticale, mobile et écrans très bas (téléphone à l'horizontale) :
+// la scène et les parchemins illustrés laissent place à des panneaux simples
+@mixin mobile
+  @media (max-width: 768px), (max-width: 1024px) and (orientation: portrait), (max-height: 500px)
+    @content
+
+// Panneau à fond uni qui remplace l'image de parchemin sur mobile
+@mixin parchment-panel
+  background: $parchment
+  border: 2px solid $brown-light
+  border-radius: 0.75rem
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5)
+
 // Zone de toucher d'au moins 44 px autour d'un petit élément, sans changer son apparence
 @mixin touch-area
   position: relative

@@ -14,6 +14,9 @@
   @supports (height: 100dvh)
     --stage-height: calc(100dvh - var(--footer-height))
 
+  @include mobile
+    --header-height: 5rem
+
 *, *::before, *::after
   box-sizing: border-box
 
@@ -95,6 +98,9 @@ p
   height: min(14rem, 24vh) // suit la hauteur de l'écran pour laisser la place au contenu
   width: auto
 
+  @include mobile
+    height: min(8rem, 18vh)
+
 // Header //
 
 .header
@@ -132,6 +138,34 @@ p
 
     &:focus-visible
       @include focus-ring(3px)
+
+  // Sur mobile : étiquettes plus compactes, alignées à droite du bouton son
+  @include mobile
+    &__nav,
+    &__nav--single
+      justify-content: flex-end
+      gap: 0.5rem
+      padding: 1rem 0.75rem 0 4.25rem
+
+    &__link
+      display: inline-flex
+      align-items: center
+      min-height: 2.75rem
+      padding: 0 0.8rem
+      font-size: 0.8rem
+      letter-spacing: 1px
+
+  // Petits téléphones : les deux étiquettes doivent tenir à côté du bouton son
+  @media (max-width: 380px)
+    &__nav,
+    &__nav--single
+      gap: 0.35rem
+      padding-right: 0.5rem
+
+    &__link
+      padding: 0 0.5rem
+      font-size: 0.7rem
+      letter-spacing: 0.5px
 
 // Footer //
 

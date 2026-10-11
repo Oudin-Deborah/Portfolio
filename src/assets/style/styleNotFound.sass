@@ -44,3 +44,18 @@
 
     @include tablet
       padding: 0.85rem 1.5rem
+
+  @include mobile
+    padding: 1rem
+
+    // Le titre se retrouve devant les zones claires du décor : fond sombre pour rester lisible
+    h1
+      padding: 0.3rem 1rem
+      font-size: 2rem
+      background: rgba(20, 10, 5, 0.8)
+      border-radius: 0.5rem
+      text-shadow: none
+      -webkit-text-stroke: 0
+
+    &__message
+      padding: 1.25rem

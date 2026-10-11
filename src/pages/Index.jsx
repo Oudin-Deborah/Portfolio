@@ -34,11 +34,7 @@ function Index() {
         </h1>
 
         <div className="witch-room__stage">
-          <InteractiveElement
-            label="Contact"
-            className="witch-room__hotspot witch-room__hotspot--contact"
-            onActivate={() => navigate("/contact")}
-          />
+          {/* L'ordre des zones est celui de la liste affichée sur mobile */}
           <InteractiveElement
             label="Portfolio"
             className="witch-room__hotspot witch-room__hotspot--portfolio"
@@ -63,6 +59,11 @@ function Index() {
             label="Compétences"
             className="witch-room__hotspot witch-room__hotspot--skills"
             onActivate={() => openModal("skills")}
+          />
+          <InteractiveElement
+            label="Contact"
+            className="witch-room__hotspot witch-room__hotspot--contact"
+            onActivate={() => navigate("/contact")}
           />
           {/*<InteractiveElement
             label="Easter egg"

@@ -17,6 +17,16 @@
     background-repeat: no-repeat
     color: $ink-dark
 
+    // Sur mobile : panneau à fond uni sur toute la largeur, le texte défile à l'intérieur
+    @include mobile
+      @include parchment-panel
+      flex: 0 1 auto
+      width: 100%
+      max-width: 40rem
+      max-height: none
+      container-type: normal
+      overflow: hidden auto
+
 .about-content
   display: flex
   flex-direction: column
@@ -75,3 +85,24 @@
 
     &:hover
       color: $accent
+
+  // Sur mobile : une seule colonne et des tailles fixes, lisibles sur petit écran
+  @include mobile
+    gap: 1.25rem
+    height: auto
+    padding: 1.25rem
+    overflow: visible
+
+    &__title
+      font-size: 1.25rem
+
+    &__sections
+      grid-template-columns: 1fr
+      gap: 1.25rem
+
+    h2
+      margin-bottom: 0.4rem
+      font-size: 1.05rem
+
+    p
+      font-size: 0.95rem
