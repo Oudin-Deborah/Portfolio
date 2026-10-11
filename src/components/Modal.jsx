@@ -55,7 +55,7 @@ function Modal({ isOpen, onClose, children }) {
   return createPortal(
     <div className="modal" onClick={onClose}>
       <div
-        className="modal__content"
+        className="modal__content parchment"
         role="dialog"
         aria-modal="true"
         tabIndex={-1}

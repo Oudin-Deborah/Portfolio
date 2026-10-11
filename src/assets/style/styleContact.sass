@@ -3,97 +3,109 @@
 
 .contact-page
   @include full-page
-  padding-top: 120px
-  padding-bottom: 80px
+  padding: var(--header-height) 1rem 1rem
 
-  &__parchment
-    @include parchment-bg("../parchemin_contact.webp")
-    position: relative
-    width: min(80vw, 800px)
-    max-height: 100%
-    aspect-ratio: 900 / 1000 // à ajuster selon les dimensions réelles de parchemin_contact.webp
+  // Livre ouvert : titre et réseaux sur la page de gauche, formulaire sur celle de droite
+  // L'image est carrée avec de larges marges vides : on zoome pour n'afficher que le livre
+  &__book
+    background: url("../parchemin_contact.webp") center / 115% auto no-repeat
+    flex: 1 1 0
+    min-height: 0
+    max-height: 44rem
+    max-width: 94vw
+    aspect-ratio: 87 / 61 // proportions du livre dans l'image
+    container-type: size // les marges des pages se règlent sur la taille du livre (cqw, cqh)
+
+  &__pages
+    height: 100%
+    display: grid
+    grid-template-columns: 1fr 1fr
+    column-gap: 6.6cqw // la reliure
+    padding: 13.3cqh 14.3cqw 14.3cqh 15.8cqw // bords des deux pages
+
+  &__intro
     display: flex
     flex-direction: column
     align-items: center
-    justify-content: flex-start
-    padding: 6% 8%
-    box-sizing: border-box
+    justify-content: center
+    gap: 2.5rem
+    text-align: center
 
     h1
-      text-align: center
-      margin-bottom: 1.5rem
+      margin: 0
+      font-size: 1.5rem
+      line-height: 1.4
 
-    // Formulaire de contact //
-    form
-      display: flex
-      flex-direction: column
-      width: 100%
-      max-width: 500px
-      margin: 0 auto
-      gap: 0.9rem
-
-      input,
-      textarea
-        font-family: $font-mono
-        font-size: 1rem
-        color: $ink
-        background: transparent
-        border: none
-        border-bottom: 1.5px solid rgba($ink, 0.4)
-        padding: 0.5rem 0.3rem
-        outline: none
-        width: 100%
-        box-sizing: border-box
-        transition: border-color 0.3s ease, box-shadow 0.3s ease
-
-        &::placeholder
-          color: rgba($ink, 0.5)
-          font-style: italic
-
-        &:focus
-          border-bottom-color: $accent
-          box-shadow: 0 4px 8px -4px rgba($accent, 0.6)
-
-      textarea
-        resize: vertical
-        min-height: 4.5rem
-
-      button
-        @include button-wood
-        align-self: center
-        margin-top: 0.5rem
-        padding: 0.6rem 2.2rem
-        font-family: $font-mono
-        font-size: 0.95rem
-        text-transform: uppercase
-
-        &:disabled
-          opacity: 0.6
-          cursor: not-allowed
-
-      p
-        text-align: center
-        font-size: 0.85rem
-        color: $ink
-        margin-top: 0.5rem
-
-    // Liens LinkedIn et GitHub //
+  // Liens LinkedIn et GitHub //
+  &__socials
     ul
       list-style: none
       display: flex
-      flex-direction: row
-      gap: 10rem
+      gap: 3rem
       justify-content: center
-      align-items: center
-      margin-top: 1.5rem
+      margin: 0
       padding: 0
-      position: relative
-      z-index: 5
 
     a
       color: $brown-mid
-      font-size: 1.4rem
+      font-size: 2.2rem
       transition: color 0.2s ease
 
       &:hover
         color: $accent
+
+      &:focus-visible
+        @include focus-ring(4px)
+
+  // Formulaire de contact //
+  form
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 1rem
+    min-height: 0
+
+    input,
+    textarea
+      font-family: $font-mono
+      font-size: 1rem
+      color: $ink
+      background: transparent
+      border: none
+      border-bottom: 1.5px solid rgba($ink, 0.4)
+      padding: 0.5rem 0.3rem
+      outline: none
+      width: 100%
+      transition: border-color 0.3s ease, box-shadow 0.3s ease
+
+      &::placeholder
+        color: rgba($ink, 0.6)
+        font-style: italic
+
+      &:focus
+        border-bottom-color: $accent
+        box-shadow: 0 4px 8px -4px rgba($accent, 0.6)
+
+    textarea
+      flex: 0 1 11rem
+      min-height: 4.5rem
+      resize: none
+
+    button
+      @include button-wood
+      align-self: center
+      margin-top: 0.5rem
+      padding: 0.6rem 2.2rem
+      font-family: $font-mono
+      font-size: 0.95rem
+      text-transform: uppercase
+
+      &:disabled
+        opacity: 0.6
+        cursor: not-allowed
+
+    p
+      margin: 0
+      text-align: center
+      font-size: 0.85rem
+      color: $ink

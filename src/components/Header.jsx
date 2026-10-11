@@ -8,7 +8,7 @@ function Header() {
           Accueil
         </NavLink>
         <NavLink to="/about" className="header__link header__link--about">
-          A propos de moi
+          À propos de moi
         </NavLink>
       </nav>
     </header>

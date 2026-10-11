@@ -1,58 +1,122 @@
 // Scène de la sorcière : zones cliquables posées sur l'image de fond
 // La typographie des labels est définie dans styleGlobal.sass
+@use "sass:math"
+@use "variables" as *
 
-.interactive-element
-  position: absolute
+$scene-ratio: math.div(1584, 672) // dimensions de background_website.webp
 
-  &__label
+.witch-room
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: var(--stage-height)
+  overflow: hidden
+
+  // Calque de la taille exacte de l'image de fond (affichée en « cover », centrée) :
+  // les zones, placées en pourcentages de ce calque, restent alignées sur les objets
+  &__stage
     position: absolute
-    top: 30%
+    top: 50%
     left: 50%
+    width: max(100vw, calc(var(--stage-height) * #{$scene-ratio}))
+    height: max(var(--stage-height), calc(100vw / #{$scene-ratio}))
     transform: translate(-50%, -50%)
+
+  // Consigne affichée en bas de la scène
+  &__hint
+    position: absolute
+    bottom: 1rem
+    left: 50%
+    transform: translateX(-50%)
+    margin: 0
+    padding: 0.4rem 1.2rem
+    font-size: 0.85rem
+    color: $gold
+    background: rgba(20, 10, 5, 0.7)
+    border: 1px solid rgba($gold, 0.3)
+    border-radius: 4px
     white-space: nowrap
     pointer-events: none
 
-// Position et taille de chaque zone, en pourcentages
-.witch-room__hotspot
-  &--contact
-    top: 38%
-    left: 44%
-    width: 10%
-    height: 35%
+  // Position et taille de chaque zone, en pourcentages de l'image
+  &__hotspot
+    // Grimoire ouvert
+    &--portfolio
+      top: 43%
+      left: 21%
+      width: 14%
+      height: 21%
 
-  &--portfolio
-    top: 40%
-    left: 23%
-    width: 10%
-    height: 30%
+    // Boule de cristal
+    &--contact
+      top: 42%
+      left: 45%
+      width: 8.5%
+      height: 26%
 
-  &--skills
-    top: 58%
-    left: 52%
-    width: 13%
-    height: 19%
+    // Pile de livres sous le chat
+    &--skills
+      top: 58%
+      left: 54%
+      width: 11%
+      height: 13%
 
-  // Zones prévues, pour l'instant commentées dans pages/index.jsx
-  &--games
-    top: 32%
-    left: 65%
-    width: 9%
-    height: 27%
+    // Zones prévues, pour l'instant commentées dans pages/Index.jsx
+    // Chaudron
+    &--recipes
+      top: 46%
+      left: 34.5%
+      width: 8%
+      height: 19%
 
-  &--recipes
-    top: 43%
-    left: 35%
-    width: 8%
-    height: 37%
+    // Miroir
+    &--games
+      top: 27%
+      left: 64%
+      width: 11%
+      height: 38%
 
-  &--tarot
-    top: 77%
-    left: 35%
-    width: 25%
-    height: 14%
+    // Cartes de tarot
+    &--tarot
+      top: 76%
+      left: 38%
+      width: 20.5%
+      height: 15%
 
-  &--egg
-    top: 65%
-    left: 88%
-    width: 6%
-    height: 10%
+    // Crâne
+    &--egg
+      top: 63%
+      left: 73%
+      width: 6.5%
+      height: 18%
+
+.interactive-element
+  position: absolute
+  border-radius: 50%
+  cursor: pointer
+  transition: background 0.3s ease
+
+  // Au survol et au clavier : halo sur l'objet et étiquette inversée
+  &:hover,
+  &:focus-visible
+    background: radial-gradient(closest-side, rgba($gold, 0.45), transparent)
+    outline: none
+
+    .interactive-element__label
+      color: $nav-ink
+      background: $gold
+      text-shadow: none
+
+  &__label
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    padding: 0.3rem 0.9rem
+    background: rgba(20, 10, 5, 0.65)
+    border: 1px solid rgba($gold, 0.4)
+    border-radius: 4px
+    white-space: nowrap
+    pointer-events: none
+    transition: background 0.2s ease, color 0.2s ease

@@ -25,40 +25,47 @@ function Index() {
     <div>
       <Header />
 
-      <InteractiveElement
-        label="Contact"
-        className="witch-room__hotspot witch-room__hotspot--contact"
-        onActivate={() => navigate("/contact")}
-      />
-      <InteractiveElement
-        label="Portfolio"
-        className="witch-room__hotspot witch-room__hotspot--portfolio"
-        onActivate={() => openModal("portfolio")}
-      />
-      {/*<InteractiveElement
-        label="Jeux préférés"
-        className="witch-room__hotspot witch-room__hotspot--games"
-        onActivate={() => openModal("games")}
-      />*/}
-      {/*<InteractiveElement
-        label="Mes recettes favorites"
-        className="witch-room__hotspot witch-room__hotspot--recipes"
-        onActivate={() => openModal("recipes")}
-      />*/}
-      {/*<InteractiveElement
-        label="Tarot"
-        className="witch-room__hotspot witch-room__hotspot--tarot"
-        onActivate={() => openModal("tarot")}
-      />*/}
-      <InteractiveElement
-        label="Compétences"
-        className="witch-room__hotspot witch-room__hotspot--skills"
-        onActivate={() => openModal("skills")}
-      />
-      {/*<InteractiveElement
-        label="Easter egg"
-        className="witch-room__hotspot witch-room__hotspot--egg"
-      />*/}
+      <main className="witch-room">
+        <div className="witch-room__stage">
+          <InteractiveElement
+            label="Contact"
+            className="witch-room__hotspot witch-room__hotspot--contact"
+            onActivate={() => navigate("/contact")}
+          />
+          <InteractiveElement
+            label="Portfolio"
+            className="witch-room__hotspot witch-room__hotspot--portfolio"
+            onActivate={() => openModal("portfolio")}
+          />
+          {/*<InteractiveElement
+            label="Jeux préférés"
+            className="witch-room__hotspot witch-room__hotspot--games"
+            onActivate={() => openModal("games")}
+          />*/}
+          {/*<InteractiveElement
+            label="Mes recettes favorites"
+            className="witch-room__hotspot witch-room__hotspot--recipes"
+            onActivate={() => openModal("recipes")}
+          />*/}
+          {/*<InteractiveElement
+            label="Tarot"
+            className="witch-room__hotspot witch-room__hotspot--tarot"
+            onActivate={() => openModal("tarot")}
+          />*/}
+          <InteractiveElement
+            label="Compétences"
+            className="witch-room__hotspot witch-room__hotspot--skills"
+            onActivate={() => openModal("skills")}
+          />
+          {/*<InteractiveElement
+            label="Easter egg"
+            className="witch-room__hotspot witch-room__hotspot--egg"
+          />*/}
+        </div>
+        <p className="witch-room__hint">
+          Explorez la pièce : cliquez sur les objets
+        </p>
+      </main>
 
       <Modal isOpen={!!activeContent} onClose={closeModal}>
         {modalContents[activeContent]}

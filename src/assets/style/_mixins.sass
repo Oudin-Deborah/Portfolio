@@ -1,15 +1,14 @@
 @use "variables" as *
 
-// Page plein écran, contenu centré (welcome, contact, 404)
+// Page tenant sur un seul écran, au-dessus du footer, contenu centré
 @mixin full-page
   display: flex
   flex-direction: column
   align-items: center
   justify-content: center
   width: 100%
-  height: 100vh
+  height: var(--stage-height)
   overflow: hidden
-  box-sizing: border-box
 
 // Image de parchemin en fond, entièrement visible
 @mixin parchment-bg($image)
