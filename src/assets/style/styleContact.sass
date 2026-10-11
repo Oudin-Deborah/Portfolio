@@ -120,3 +120,35 @@
       text-align: center
       font-size: 0.85rem
       color: $ink
+
+  // Sur mobile : le livre devient un panneau à fond uni, l'introduction au-dessus du formulaire
+  @include mobile
+    &__book
+      @include parchment-panel
+      flex: 0 1 auto
+      width: 100%
+      max-width: 34rem
+      max-height: none
+      aspect-ratio: auto
+      container-type: normal
+      overflow: hidden auto
+
+    &__pages
+      display: flex
+      flex-direction: column
+      gap: 1.5rem
+      height: auto
+      padding: 1.5rem 1.25rem
+
+    &__intro
+      gap: 1rem
+
+      h1
+        font-size: 1.25rem
+
+    form textarea
+      flex: none
+      height: 8rem
+
+    form button
+      min-height: 2.75rem

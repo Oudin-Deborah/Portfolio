@@ -11,6 +11,9 @@ function Logo() {
           src={logo}
           alt="Logo de Déborah Oudin, développeuse web : entrer dans le site"
           className="logo__image"
+          width="482"
+          height="448"
+          fetchPriority="high"
         />
       </Link>
     </div>

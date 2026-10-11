@@ -9,6 +9,27 @@
       name="description"
       content="Portfolio de Déborah Oudin, développeuse Full Stack. Une scène de sorcière interactive pour explorer mes projets, compétences et univers créatif."
     />
+    <!-- Validation de la propriété du site dans Google Search Console -->
+    <meta
+      name="google-site-verification"
+      content="MOThkOZstYgJ5FUQgHeHM1IUaL8pBUi0SkVLo4YHvc4"
+    />
+    <!-- Images de fond déclarées en CSS : préchargées pour s'afficher sans attendre la feuille de style -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/src/assets/background_website.webp"
+      fetchpriority="high"
+    />
+    <!-- Le parchemin n'est pas utilisé sur tablette verticale et mobile -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/src/assets/parchemin__welcome.webp"
+      media="(min-width: 1025px) and (min-height: 501px), (min-width: 769px) and (orientation: landscape) and (min-height: 501px)"
+    />
     <!-- Open Graph -->
     <meta
       property="og:title"
