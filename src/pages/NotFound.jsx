@@ -6,18 +6,26 @@ import "../assets/style/styleNotFound.sass";
 
 function NotFound() {
   return (
-    <section className="not-found-page">
-      <Logo />
-      
-      <h1>Erreur 404</h1>
-      <div className="not-found-page__message">
-      <p className="not-found-page__text">Ce lieu n'est pas sûr il faut retourner là où tu es en sécurité.</p>
-      <Link to="/" className="not-found-page__link">
-        Retourner en sécurité
-      </Link>
-      </div>
+    <div className="not-found-page">
+      <header>
+        <Logo />
+      </header>
+
+      <main className="not-found-page__main">
+        <h1>Erreur 404</h1>
+        <div className="not-found-page__message">
+          <p className="not-found-page__text">
+            Ce lieu n'est pas sûr, il faut retourner là où vous êtes en
+            sécurité.
+          </p>
+          <Link to="/" className="not-found-page__link">
+            Retourner en sécurité
+          </Link>
+        </div>
+      </main>
+
       <Footer />
-    </section>
+    </div>
   );
 }
 

@@ -5,13 +5,42 @@
 
 :root
   --footer-height: 3.5rem
+  // Place réservée en haut des pages qui affichent le header
+  --header-height: 7.5rem
+  // Hauteur visible au-dessus du footer
+  --stage-height: calc(100vh - var(--footer-height))
 
+  // Sur tablette et mobile, dvh tient compte de la barre d'adresse du navigateur
+  @supports (height: 100dvh)
+    --stage-height: calc(100dvh - var(--footer-height))
+
+*, *::before, *::after
+  box-sizing: border-box
+
+// Tout le site est dimensionné en rem : sur un grand écran, la taille de base grandit avec la fenêtre
+// (16 px jusqu'à 1440 × 900, puis proportionnelle, plafonnée à 32 px) et l'ensemble suit
 html
+  font-size: clamp(100%, min(1.78vh, 1.11vw), 200%)
   display: block
   margin: 0
   padding: 0
   background-color: #000
   min-height: 100vh
+
+body
+  margin: 0
+
+// Texte réservé aux lecteurs d'écran : présent dans la page mais invisible
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
+  clip-path: inset(50%)
+  white-space: nowrap
+  border: 0
 
 // Image de fond : s'arrête au-dessus du footer
 html::before
@@ -20,7 +49,7 @@ html::before
   top: 0
   left: 0
   width: 100%
-  height: calc(100vh - var(--footer-height))
+  height: var(--stage-height)
   background-image: url("../background_website.webp")
   background-size: cover
   background-position: center
@@ -62,8 +91,9 @@ p
 // Logo (welcome et 404) //
 
 .logo__image
-  width: min(100%, 280px)
-  height: auto
+  display: block
+  height: min(14rem, 24vh) // suit la hauteur de l'écran pour laisser la place au contenu
+  width: auto
 
 // Header //
 
@@ -78,17 +108,40 @@ p
     flex-direction: row
     justify-content: space-around
     align-items: center
-    padding: 50px 5% 0
+    padding: 3.1rem 5% 0
 
   // La typographie des liens est définie plus haut, avec les titres
+  // Sur la scène, il ne reste que « À propos » : il garde sa place à droite
+  &__nav--single
+    justify-content: flex-end
+    padding-right: 20%
+
+  // L'étiquette s'étire à la taille de son texte
   &__link
-    padding: 1.5%
+    display: inline-block
+    padding: 1.1rem 2rem
+    background-color: $tag-bg
+    background-size: 100% 100%
+    background-repeat: no-repeat
+    white-space: nowrap
+    text-decoration: none
+    transition: transform 0.2s ease
+
+    &:hover
+      transform: translateY(-2px)
+
+    // Le contour serait rogné par la découpe de l'étiquette : on souligne le texte
+    &:focus-visible
+      outline: none
+      text-decoration: underline
+      text-decoration-thickness: 2px
+      text-underline-offset: 4px
 
     &--index
-      @include parchment-bg("../index__parchemin.webp")
+      @include nav-tag("../index__parchemin.webp")
 
     &--about
-      @include parchment-bg("../about__parchemin.webp")
+      @include nav-tag("../about__parchemin.webp")
 
 // Footer //
 
@@ -108,7 +161,6 @@ p
   color: #e8d5b5
   text-align: center
   font-size: 0.75rem
-  box-sizing: border-box
 
   p
     margin: 0 // les marges par défaut des <p> gonflaient la hauteur
@@ -118,6 +170,9 @@ p
 
     &:hover
       color: $accent
+
+    @include tablet
+      @include touch-area
 
 // Bouton son //
 
@@ -148,3 +203,7 @@ p
 
   &:active
     transform: scale(0.95)
+
+  @include tablet
+    width: 2.75rem
+    height: 2.75rem
