@@ -9,7 +9,7 @@ function Logo() {
       <Link to="/index">
         <img
           src={logo}
-          alt="Oudin Deborah professional logo and personal branding mark"
+          alt="Logo de Déborah Oudin, développeuse web : entrer dans le site"
           className="logo__image"
         />
       </Link>

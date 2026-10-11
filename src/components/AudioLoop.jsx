@@ -9,6 +9,7 @@ function AudioLoop() {
 
   return (
     <button
+      type="button"
       className="sound-toggle"
       onClick={toggleAudio}
       aria-label={isPlaying ? "Couper le son" : "Activer le son"}

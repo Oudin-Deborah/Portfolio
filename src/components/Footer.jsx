@@ -8,7 +8,8 @@ function Footer() {
         <a
           href="https://www.youtube.com/@Gribz_Music"
           target="_blank"
-          aria-label="Gribz music youtube"
+          rel="noreferrer"
+          aria-label="Gribz, chaîne YouTube (nouvel onglet)"
         >
           Gribz
         </a>{" "}

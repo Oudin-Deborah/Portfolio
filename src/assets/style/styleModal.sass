@@ -16,35 +16,42 @@
   justify-content: center
   z-index: 100
 
+  // Parchemin : limité par la largeur et par la hauteur de l'écran, sans se déformer
   &__content
     @include parchment-bg("../parchemin__welcome.webp")
     position: relative
-    width: min(90vw, 700px)
+    --modal-width: min(92vw, 62.5rem, calc(88vh * 1000 / 702))
+    width: var(--modal-width)
     aspect-ratio: 1000 / 702
-    max-height: 90vh
     color: $ink
-    padding: 8% 10%
-    box-sizing: border-box
+    // Marges des bords roulés et déchirés, proportionnelles à la largeur du parchemin
+    padding: calc(var(--modal-width) * 0.144) calc(var(--modal-width) * 0.173) calc(var(--modal-width) * 0.173)
     display: flex
     flex-direction: column
 
-    &:focus
+    &:focus-visible
       @include focus-ring(4px)
 
   // Zone défilante : le contenu ne déborde plus du parchemin
   &__inner
-    overflow-y: auto
     flex: 1
     min-height: 0
+    overflow: hidden auto
+    display: flex
+    flex-direction: column
+
+    // Centre le contenu tant qu'il tient, et le laisse défiler sinon
+    > *
+      margin-block: auto
 
   &__close
     position: absolute
-    top: 0.8rem
-    right: 1rem
+    top: 4%
+    right: 2.5%
     z-index: 10
     background: transparent
     border: none
-    font-size: 1.8rem
+    font-size: 2rem
     line-height: 1
     color: $ink
     cursor: pointer
@@ -53,17 +60,19 @@
     &:hover
       color: $accent
 
-    &:focus
+    &:focus-visible
       @include focus-ring
+
+    @include tablet
+      min-width: 2.75rem
+      min-height: 2.75rem
 
 // Carrousel //
 
 .carousel
   position: relative
-  display: flex
-  flex-direction: column
-  align-items: center
   width: 100%
+  padding: 0 3rem // place des flèches de part et d'autre de la fiche
 
   &__track
     width: 100%
@@ -73,38 +82,45 @@
     top: 50%
     transform: translateY(-50%)
     font-family: $font-title
-    color: $gold
+    color: $ink
     background: transparent
-    border: 1px solid $gold
+    border: 1px solid $ink
     border-radius: 4px
-    width: 32px
-    height: 32px
-    font-size: 1.2rem
+    width: 2.4rem
+    height: 2.4rem
+    font-size: 1.4rem
     cursor: pointer
     z-index: 2
     transition: transform 0.2s ease, background 0.2s ease
 
     &:hover
-      background: rgba($gold, 0.15)
+      background: rgba($ink, 0.12)
       transform: translateY(-50%) scale(1.1)
 
+    &:focus-visible
+      @include focus-ring
+
     &--prev
-      left: 0
+      left: 4px
 
     &--next
-      right: 0
+      right: 4px
+
+    @include tablet
+      width: 2.75rem
+      height: 2.75rem
 
   &__dots
     display: flex
     gap: 0.6rem
     justify-content: center
-    margin-top: 1rem
+    margin-top: 1.2rem
 
   &__dot
-    width: 10px
-    height: 10px
+    width: 0.75rem
+    height: 0.75rem
     border-radius: 50%
-    border: 1px solid $gold
+    border: 1px solid $ink
     background: transparent
     padding: 0
     cursor: pointer
@@ -113,47 +129,88 @@
     &:hover
       transform: scale(1.2)
 
-    &--active
-      background: $gold
+    &:focus-visible
+      @include focus-ring
 
-// Fiche projet //
+    &--active
+      background: $ink
+
+    @include tablet
+      @include touch-area
+
+  @include tablet
+    padding: 0 3.5rem
+
+    &__dots
+      gap: 1.2rem
+
+// Fiche projet : image à gauche, texte à droite //
 
 .portfolio-card
-  display: flex
-  flex-direction: column
+  display: grid
+  grid-template-columns: 1.3fr 1fr
   align-items: center
-  gap: 0.8rem
-  text-align: center
+  gap: 1.8rem
 
-  a
-    display: block
-
+  // Cadre de taille fixe (la fiche ne change pas de hauteur d'un projet à l'autre) :
+  // l'image y est réduite pour tenir en entier, sans être rognée
   &__image
-    width: 100%
-    max-width: 450px
-    aspect-ratio: 16 / 10
-    object-fit: cover
-    border-radius: 4px
     display: block
-    margin: 0 auto
-    border: 1px solid rgba($ink, 0.3)
+    width: 100%
+    aspect-ratio: 16 / 10
+    object-fit: contain
+    filter: drop-shadow(0 2px 4px rgba($ink, 0.45))
 
-// Liste des compétences //
+  &__body
+    display: flex
+    flex-direction: column
+    gap: 0.7rem
+
+    h3
+      margin: 0
+      font-size: 1.6rem
+
+    p
+      margin: 0
+      font-size: 1rem
+      line-height: 1.5
+
+  &__stack
+    font-family: $font-mono
+    color: $brown
+
+  &__links
+    display: flex
+    flex-wrap: wrap
+    gap: 0.6rem
+    margin-top: 0.4rem
+
+  &__link
+    @include button-wood
+    padding: 0.4rem 1rem
+    font-family: $font-mono
+    font-size: 0.8rem
+
+    &:focus-visible
+      @include focus-ring
+
+    @include tablet
+      padding: 0.8rem 1rem
+
+// Liste des compétences, sur deux colonnes //
 
 .skills-list
   list-style: none
   padding: 0
   margin: 0
-  display: flex
-  flex-direction: column
-  gap: 0.4rem
+  width: 100%
+  display: grid
+  grid-template-columns: 1fr 1fr
+  align-items: start
+  gap: 0.2rem 3rem
 
   &__item
     border-bottom: 1px solid rgba($brown-light, 0.3)
-    padding-bottom: 0.4rem
-
-    &:last-child
-      border-bottom: none
 
   &__toggle
     width: 100%
@@ -166,17 +223,21 @@
     text-transform: uppercase
     letter-spacing: 0.05em
     color: $brown
-    padding: 0.7rem 0.5rem
+    padding: 0.6rem 0.5rem
     cursor: pointer
     font-size: 0.95rem
+    font-weight: 700
     transition: color 0.2s ease
 
     &:hover
-      color: $brown-light
+      color: $accent
 
     &:focus-visible
       outline: 1px dashed $brown-light
       outline-offset: 2px
+
+    @include tablet
+      min-height: 2.75rem
 
   &__arrow
     font-family: $font-mono
@@ -190,7 +251,7 @@
   &__projects
     list-style: none
     margin: 0
-    padding: 0.3rem 0 0.8rem 1.2rem
+    padding: 0 0 0.6rem 1.2rem
     font-family: $font-mono
     font-size: 0.85rem
     color: $ink-dark
@@ -207,3 +268,9 @@
         position: absolute
         left: 0
         color: $brown-light
+
+  &__project-link
+    color: $title-ink
+
+    &:hover
+      color: $accent
