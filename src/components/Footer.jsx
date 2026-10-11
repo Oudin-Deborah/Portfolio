@@ -2,7 +2,7 @@
 function Footer() {
   return (
     <footer className="footer">
-      <p>©2026 Deborah Oudin — Tous droits réservés </p>
+      <p>©2026 Déborah Oudin — Tous droits réservés </p>
       <p>
         Loop witch by{" "}
         <a

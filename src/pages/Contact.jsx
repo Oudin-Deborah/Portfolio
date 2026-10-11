@@ -24,7 +24,7 @@ function Contact() {
                     href="https://www.linkedin.com/in/oudin-deborah/"
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="Profil LinkedIn de Deborah Oudin"
+                    aria-label="Profil LinkedIn de Déborah Oudin"
                   >
                     <FontAwesomeIcon icon={faLinkedin} />
                   </a>
@@ -34,7 +34,7 @@ function Contact() {
                     href="https://github.com/Oudin-Deborah"
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="Profil GitHub de Deborah Oudin"
+                    aria-label="Profil GitHub de Déborah Oudin"
                   >
                     <FontAwesomeIcon icon={faGithub} />
                   </a>

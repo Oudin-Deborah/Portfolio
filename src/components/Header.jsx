@@ -12,11 +12,11 @@ function Header() {
         aria-label="Navigation principale"
       >
         {!isIndex && (
-          <NavLink to="/index" className="header__link header__link--index">
+          <NavLink to="/index" className="header__link">
             Accueil
           </NavLink>
         )}
-        <NavLink to="/about" className="header__link header__link--about">
+        <NavLink to="/about" className="header__link">
           À propos de moi
         </NavLink>
       </nav>
