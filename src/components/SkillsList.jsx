@@ -20,6 +20,7 @@ function SkillsList() {
         return (
           <li key={skill} className="skills-list__item">
             <button
+              type="button"
               className="skills-list__toggle"
               onClick={() => toggleSkill(skill)}
               aria-expanded={isOpen}
@@ -27,6 +28,7 @@ function SkillsList() {
               <span>{skill}</span>
               <span
                 className={`skills-list__arrow ${isOpen ? "skills-list__arrow--open" : ""}`}
+                aria-hidden="true"
               >
                 ›
               </span>

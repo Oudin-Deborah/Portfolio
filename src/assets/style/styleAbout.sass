@@ -38,6 +38,9 @@
     &:focus-visible
       @include focus-ring
 
+    @include tablet
+      padding: 0.75rem 1rem
+
   &__title
     flex: 1
     margin: 0
@@ -60,6 +63,10 @@
     margin: 0
     font-size: clamp(0.7rem, 2.05cqh, 1rem)
     line-height: 1.5
+
+    // Le parchemin est plus petit sur tablette : le texte ne descend pas sous 13 px
+    @include tablet
+      font-size: clamp(0.8125rem, 2.25cqh, 1rem)
 
   &__contact-link
     color: $title-ink

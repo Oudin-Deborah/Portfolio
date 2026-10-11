@@ -30,17 +30,21 @@
       margin: 0
       font-size: 1.8rem
 
-  &__subtitle
+  // Sous-titre et signature : même typographie que les titres sur parchemin
+  &__subtitle,
+  &__signature
     margin: 0
+    font-family: $font-title
+    font-size: 1rem
+    font-weight: 700
+    letter-spacing: 2px
+    color: $title-ink
 
   &__text
     width: 100%
     margin: 0
     font-size: 0.9rem
     line-height: 1.4
-
-  &__signature
-    margin: 0
 
   // Bouton d'entrée visible, en complément du logo cliquable
   &__enter
@@ -52,3 +56,6 @@
 
     &:focus-visible
       @include focus-ring
+
+    @include tablet
+      padding: 0.8rem 1.8rem

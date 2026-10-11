@@ -1,4 +1,4 @@
-/*Fonction pour l'affichage des noms sur la page principale */
+/*Zone cliquable de la scène : un vrai bouton, avec son nom affiché */
 
 function InteractiveElement({
   label,
@@ -7,20 +7,11 @@ function InteractiveElement({
   position = "top",
   onActivate,
 }) {
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      onActivate?.();
-    }
-  };
-
   return (
-    <div
+    <button
+      type="button"
       className={`interactive-element ${className}`}
       onClick={onActivate}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
-      role="button"
     >
       {children}
 
@@ -29,7 +20,7 @@ function InteractiveElement({
       >
         {label}
       </span>
-    </div>
+    </button>
   );
 }
 

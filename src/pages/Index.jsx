@@ -14,18 +14,25 @@ function Index() {
   const navigate = useNavigate();
   const { activeContent, openModal, closeModal } = useModal();
 
+  // Contenu et titre de chaque modale
   const modalContents = {
-    portfolio: <PortfolioList />,
-    games: <GamesList />,
-    recipes: <RecipesList />,
-    skills: <SkillsList />,
+    portfolio: { title: "Portfolio", content: <PortfolioList /> },
+    games: { title: "Jeux préférés", content: <GamesList /> },
+    recipes: { title: "Mes recettes favorites", content: <RecipesList /> },
+    skills: { title: "Compétences", content: <SkillsList /> },
   };
+  const activeModal = modalContents[activeContent];
 
   return (
-    <div>
+    <>
       <Header />
 
       <main className="witch-room">
+        {/* Titre de la page, lu par les lecteurs d'écran mais non affiché */}
+        <h1 className="visually-hidden">
+          Portfolio de Déborah Oudin, développeuse web
+        </h1>
+
         <div className="witch-room__stage">
           <InteractiveElement
             label="Contact"
@@ -67,12 +74,16 @@ function Index() {
         </p>
       </main>
 
-      <Modal isOpen={!!activeContent} onClose={closeModal}>
-        {modalContents[activeContent]}
+      <Modal
+        isOpen={!!activeModal}
+        onClose={closeModal}
+        title={activeModal?.title}
+      >
+        {activeModal?.content}
       </Modal>
 
       <Footer />
-    </div>
+    </>
   );
 }
 

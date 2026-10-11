@@ -7,10 +7,10 @@ function PortfolioList() {
     <Carousel
       items={projects}
       renderItem={(project) => (
-        <div className="portfolio-card">
+        <article className="portfolio-card">
           <img
             src={project.image}
-            alt={project.title}
+            alt={`Aperçu du projet ${project.title}`}
             className="portfolio-card__image"
           />
           <div className="portfolio-card__body">
@@ -26,6 +26,7 @@ function PortfolioList() {
                   className="portfolio-card__link"
                 >
                   Voir le site
+                  <span className="visually-hidden"> {project.title}</span>
                 </a>
               )}
               {project.repoUrl && (
@@ -36,11 +37,12 @@ function PortfolioList() {
                   className="portfolio-card__link"
                 >
                   Repository GitHub
+                  <span className="visually-hidden"> de {project.title}</span>
                 </a>
               )}
             </div>
           </div>
-        </div>
+        </article>
       )}
     />
   );

@@ -63,6 +63,10 @@
     &:focus-visible
       @include focus-ring
 
+    @include tablet
+      min-width: 2.75rem
+      min-height: 2.75rem
+
 // Carrousel //
 
 .carousel
@@ -102,6 +106,10 @@
     &--next
       right: 4px
 
+    @include tablet
+      width: 2.75rem
+      height: 2.75rem
+
   &__dots
     display: flex
     gap: 0.6rem
@@ -127,6 +135,15 @@
     &--active
       background: $ink
 
+    @include tablet
+      @include touch-area
+
+  @include tablet
+    padding: 0 3.5rem
+
+    &__dots
+      gap: 1.2rem
+
 // Fiche projet : image à gauche, texte à droite //
 
 .portfolio-card
@@ -135,13 +152,14 @@
   align-items: center
   gap: 1.8rem
 
+  // Cadre de taille fixe (la fiche ne change pas de hauteur d'un projet à l'autre) :
+  // l'image y est réduite pour tenir en entier, sans être rognée
   &__image
     display: block
     width: 100%
     aspect-ratio: 16 / 10
-    object-fit: cover
-    border-radius: 4px
-    border: 1px solid rgba($ink, 0.3)
+    object-fit: contain
+    filter: drop-shadow(0 2px 4px rgba($ink, 0.45))
 
   &__body
     display: flex
@@ -175,6 +193,9 @@
 
     &:focus-visible
       @include focus-ring
+
+    @include tablet
+      padding: 0.8rem 1rem
 
 // Liste des compétences, sur deux colonnes //
 
@@ -214,6 +235,9 @@
     &:focus-visible
       outline: 1px dashed $brown-light
       outline-offset: 2px
+
+    @include tablet
+      min-height: 2.75rem
 
   &__arrow
     font-family: $font-mono

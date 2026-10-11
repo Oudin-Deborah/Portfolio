@@ -9,7 +9,7 @@ function Footer() {
           href="https://www.youtube.com/@Gribz_Music"
           target="_blank"
           rel="noreferrer"
-          aria-label="Gribz music youtube"
+          aria-label="Gribz, chaîne YouTube (nouvel onglet)"
         >
           Gribz
         </a>{" "}

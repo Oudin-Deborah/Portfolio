@@ -33,6 +33,31 @@
     box-shadow: 0 0 12px rgba(230, 130, 30, 0.6)
     transform: translateY(-1px)
 
+// Étiquette du header : parchemin éclairci pour le contraste du texte,
+// puis découpé selon la forme de l'image pour garder ses bords déchirés
+@mixin nav-tag($image)
+  background-image: linear-gradient(rgba($tag-light, 0.4), rgba($tag-light, 0.4)), url($image)
+  -webkit-mask: url($image) center / 100% 100% no-repeat
+  mask: url($image) center / 100% 100% no-repeat
+
+// Tablette en paysage et écrans tactiles plus petits
+@mixin tablet
+  @media (max-width: 1024px)
+    @content
+
+// Zone de toucher d'au moins 44 px autour d'un petit élément, sans changer son apparence
+@mixin touch-area
+  position: relative
+
+  &::after
+    content: ""
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 2.75rem
+    height: 2.75rem
+    transform: translate(-50%, -50%)
+
 @mixin focus-ring($offset: 2px)
   outline: 2px solid $accent
   outline-offset: $offset

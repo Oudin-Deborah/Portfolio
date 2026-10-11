@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import "../assets/style/styleModal.sass"
 
 //ouverture et fermeture de la modale parente//
-function Modal({ isOpen, onClose, children }) {
+function Modal({ isOpen, onClose, title, children }) {
   const modalRef = useRef(null);
   const previousFocusRef = useRef(null);
 
@@ -58,13 +58,23 @@ function Modal({ isOpen, onClose, children }) {
         className="modal__content parchment"
         role="dialog"
         aria-modal="true"
+        aria-labelledby="modal-title"
         tabIndex={-1}
         ref={modalRef}
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="modal__close" onClick={onClose} aria-label="Fermer">
+        <button
+          type="button"
+          className="modal__close"
+          onClick={onClose}
+          aria-label="Fermer"
+        >
           &times;
         </button>
+        {/* Titre de la modale, lu par les lecteurs d'écran mais non affiché */}
+        <h2 id="modal-title" className="visually-hidden">
+          {title}
+        </h2>
         <div className="modal__inner">{children}</div>
       </div>
     </div>,

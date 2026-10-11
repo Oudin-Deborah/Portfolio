@@ -57,6 +57,10 @@
       &:focus-visible
         @include focus-ring(4px)
 
+      @include tablet
+        display: inline-block
+        padding: 0.3rem
+
   // Formulaire de contact //
   form
     display: flex
@@ -85,6 +89,13 @@
       &:focus
         border-bottom-color: $accent
         box-shadow: 0 4px 8px -4px rgba($accent, 0.6)
+
+    @include tablet
+      input
+        padding-block: 0.7rem
+
+      button
+        padding-block: 0.8rem
 
     textarea
       flex: 0 1 11rem
