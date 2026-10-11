@@ -40,6 +40,14 @@
     letter-spacing: 2px
     color: $title-ink
 
+  // Nom et métier, sous le titre
+  &__role
+    margin: 0
+    font-size: 0.85rem
+    font-weight: 600
+    color: $ink
+    white-space: nowrap // sur une seule ligne, pour ne pas pousser le texte hors du parchemin
+
   &__text
     width: 100%
     margin: 0
@@ -79,3 +87,7 @@
 
       h1
         font-size: 1.6rem
+
+    // Le panneau s'adapte à son contenu : la ligne peut revenir à la ligne sur un petit écran
+    &__role
+      white-space: normal

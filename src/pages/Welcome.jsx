@@ -16,6 +16,10 @@ function Welcome() {
       <main className="welcome-page__parchment parchment">
         <div className="welcome-page__content">
           <h1>Bienvenue</h1>
+          {/* Qui je suis, en texte : le logo le dit en image, illisible pour un moteur de recherche */}
+          <p className="welcome-page__role">
+            Déborah Oudin, développeuse web full stack
+          </p>
           <p className="welcome-page__subtitle">
             Je vous propose ici une expérience immersive
           </p>
