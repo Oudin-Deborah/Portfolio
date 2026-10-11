@@ -4,7 +4,7 @@ Portfolio interactif de développeuse web : le visiteur explore une pièce de so
 
 **Site en ligne : <https://oudin-deborah.github.io/Portfolio/>**
 
-![Aperçu de la scène interactive du portfolio](public/deborah_oudin_developpeuse_web.png)
+![Aperçu de la scène interactive du portfolio](public/apercu_portfolio.jpg)
 
 ## Fonctionnalités
 

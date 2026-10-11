@@ -4,7 +4,7 @@
     "title": "Witch Room",
     "description": "Portfolio personnel interactif.",
     "stack": ["React", "Vite", "Sass"],
-    "image": "deborah_oudin_developpeuse_web.png",
+    "image": "Witch_Room.webp",
     "liveUrl": "https://oudin-deborah.github.io/Portfolio/",
     "repoUrl": "https://github.com/Oudin-Deborah/Portfolio"
   },
