@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import "../assets/style/styleWelcome.sass";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Welcome() {
+  usePageTitle("Déborah Oudin — Développeuse Full Stack | Portfolio React");
+
   return (
     <div className="welcome-page">
       <header>

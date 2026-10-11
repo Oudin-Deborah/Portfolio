@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import "../assets/style/styleNotFound.sass";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function NotFound() {
+  usePageTitle("Page introuvable — Déborah Oudin");
+
   return (
     <div className="not-found-page">
       <header>

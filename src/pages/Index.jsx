@@ -9,8 +9,11 @@ import RecipesList from "../components/RecipesList";
 import GamesList from "../components/GamesList";
 import "../assets/style/styleIndex.sass";
 import PortfolioList from "../components/PortfolioList";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Index() {
+  usePageTitle("Portfolio interactif — Déborah Oudin, développeuse Full Stack");
+
   const navigate = useNavigate();
   const { activeContent, openModal, closeModal } = useModal();
 

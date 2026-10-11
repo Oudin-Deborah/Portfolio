@@ -2,7 +2,17 @@
 function Footer() {
   return (
     <footer className="footer">
-      <p>©2026 Déborah Oudin — Tous droits réservés </p>
+      <p>
+        ©2026 Déborah Oudin — Tous droits réservés —{" "}
+        <a
+          href="https://github.com/Oudin-Deborah/Portfolio"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Code source du portfolio sur GitHub (nouvel onglet)"
+        >
+          Code source
+        </a>
+      </p>
       <p>
         Loop witch by{" "}
         <a
