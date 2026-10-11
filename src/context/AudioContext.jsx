@@ -22,7 +22,8 @@ export function AudioProvider({ children }) {
   return (
     <AudioContext.Provider value={{ isPlaying, toggleAudio }}>
       {/* Opus en priorité (plus léger), MP3 en secours pour les navigateurs sans Ogg */}
-      <audio ref={audioRef} loop>
+      {/* preload="none" : la musique n'est téléchargée qu'au moment où on l'active */}
+      <audio ref={audioRef} loop preload="none">
         <source src={witchyLoopOgg} type="audio/ogg; codecs=opus" />
         <source src={witchyLoopMp3} type="audio/mpeg" />
       </audio>

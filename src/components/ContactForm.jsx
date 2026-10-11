@@ -1,7 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+// Temps laissé pour lire la confirmation avant le retour à l'accueil
+const REDIRECT_DELAY = 3000;
+
 //fonction de gestion du form d'envoi de mail//
 function ContactForm() {
   const [statut, setStatut] = useState(null); // null | "envoi" | "succes" | "erreur"
+  const navigate = useNavigate();
+
+  // Message envoyé : retour à l'accueil après la confirmation
+  useEffect(() => {
+    if (statut !== "succes") return;
+
+    const timer = setTimeout(() => navigate("/index"), REDIRECT_DELAY);
+    return () => clearTimeout(timer);
+  }, [statut, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -67,7 +81,9 @@ function ContactForm() {
         {statut === "envoi" ? "Envoi..." : "Envoyer"}
       </button>
 
-      {statut === "succes" && <p role="status">Message envoyé, merci !</p>}
+      {statut === "succes" && (
+        <p role="status">Message envoyé, merci ! Retour à l'accueil…</p>
+      )}
       {statut === "erreur" && (
         <p role="alert">Une erreur est survenue, veuillez réessayer.</p>
       )}
