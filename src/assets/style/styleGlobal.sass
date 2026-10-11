@@ -116,13 +116,13 @@ p
     justify-content: flex-end
     padding-right: 20%
 
-  // L'étiquette s'étire à la taille de son texte
+  // Étiquette à fond uni, bordée de la couleur du texte
   &__link
     display: inline-block
-    padding: 1.1rem 2rem
+    padding: 0.7rem 1.6rem
     background-color: $tag-bg
-    background-size: 100% 100%
-    background-repeat: no-repeat
+    border: 2px solid $nav-ink
+    border-radius: 0.5rem
     white-space: nowrap
     text-decoration: none
     transition: transform 0.2s ease
@@ -130,18 +130,8 @@ p
     &:hover
       transform: translateY(-2px)
 
-    // Le contour serait rogné par la découpe de l'étiquette : on souligne le texte
     &:focus-visible
-      outline: none
-      text-decoration: underline
-      text-decoration-thickness: 2px
-      text-underline-offset: 4px
-
-    &--index
-      @include nav-tag("../index__parchemin.webp")
-
-    &--about
-      @include nav-tag("../about__parchemin.webp")
+      @include focus-ring(3px)
 
 // Footer //
 

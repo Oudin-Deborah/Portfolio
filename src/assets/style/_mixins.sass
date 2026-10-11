@@ -33,13 +33,6 @@
     box-shadow: 0 0 12px rgba(230, 130, 30, 0.6)
     transform: translateY(-1px)
 
-// Étiquette du header : parchemin éclairci pour le contraste du texte,
-// puis découpé selon la forme de l'image pour garder ses bords déchirés
-@mixin nav-tag($image)
-  background-image: linear-gradient(rgba($tag-light, 0.4), rgba($tag-light, 0.4)), url($image)
-  -webkit-mask: url($image) center / 100% 100% no-repeat
-  mask: url($image) center / 100% 100% no-repeat
-
 // Tablette en paysage et écrans tactiles plus petits
 @mixin tablet
   @media (max-width: 1024px)
