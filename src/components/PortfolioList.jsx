@@ -1,15 +1,23 @@
 //fonction de gestion des projets ajoutés dans data/projects affichés sur l'index//
+import { Link } from "react-router-dom";
 import projects from "../data/projects.json";
 import Carousel from "./Carousel";
 
-function PortfolioList() {
+// initialId : projet à afficher en premier (retour depuis sa fiche), sinon le premier de la liste
+function PortfolioList({ initialId }) {
+  const initialIndex = Math.max(
+    0,
+    projects.findIndex((project) => project.id === initialId),
+  );
+
   return (
     <Carousel
       items={projects}
+      initialIndex={initialIndex}
       renderItem={(project) => (
         <article className="portfolio-card">
           <img
-            src={project.image}
+            src={import.meta.env.BASE_URL + project.image}
             alt={`Aperçu du projet ${project.title}`}
             className="portfolio-card__image"
             loading="lazy"
@@ -20,6 +28,16 @@ function PortfolioList() {
             <p>{project.description}</p>
             <p className="portfolio-card__stack">{project.stack.join(" · ")}</p>
             <div className="portfolio-card__links">
+              <Link
+                to={`/projets/${project.id}`}
+                className="portfolio-card__link"
+              >
+                À propos
+                <span className="visually-hidden">
+                  {" "}
+                  du projet {project.title}
+                </span>
+              </Link>
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}

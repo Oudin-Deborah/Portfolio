@@ -1,0 +1,165 @@
+// Fiche détaillée d'un projet (/projets/:id)
+@use "variables" as *
+@use "mixins" as *
+
+.project-page
+  @include full-page
+  justify-content: flex-start
+  padding: var(--header-height) 1rem 1rem
+
+  // Panneau à fond uni : la fiche est plus longue que l'écran et défile à l'intérieur
+  &__panel
+    @include parchment-panel
+    flex: 0 1 auto
+    min-height: 0
+    width: 100%
+    max-width: 56rem
+    overflow: hidden auto
+    color: $ink-dark
+
+.project
+  display: flex
+  flex-direction: column
+  gap: 1.75rem
+  padding: 2rem 2.5rem 2.5rem
+
+  // Textes courants de la fiche (les blocs plus bas ajustent leurs propres éléments)
+  h2
+    margin: 0 0 0.6rem
+    font-size: 1.15rem
+
+  p,
+  li
+    font-family: $font-body
+    font-size: 1rem
+    line-height: 1.6
+
+  p
+    margin: 0
+
+  // Bouton retour à gauche, titre centré dans la place restante
+  &__header
+    display: flex
+    align-items: center
+    gap: 1rem
+
+  &__back
+    @include button-wood
+    padding: 0.4rem 0.8rem
+
+    &:focus-visible
+      @include focus-ring
+
+    @include tablet
+      padding: 0.75rem 1rem
+
+  &__title
+    flex: 1
+    margin: 0
+    padding-right: 2.5rem // compense le bouton retour pour centrer le titre
+    text-align: center
+    text-transform: uppercase
+    letter-spacing: 0.05em
+    font-size: 1.8rem
+
+  // Aperçu à gauche, résumé à droite
+  &__intro
+    display: grid
+    grid-template-columns: 1fr 1.2fr
+    align-items: center
+    gap: 2rem
+
+  &__image
+    display: block
+    width: 100%
+    max-height: 18rem
+    object-fit: contain
+    filter: drop-shadow(0 2px 4px rgba($ink, 0.45))
+
+  &__summary
+    display: flex
+    flex-direction: column
+    gap: 0.8rem
+
+  &__description
+    margin: 0
+    font-size: 1.05rem
+    font-weight: 600
+    line-height: 1.5
+
+  // Technologies sous forme d'étiquettes
+  &__stack
+    display: flex
+    flex-wrap: wrap
+    gap: 0.5rem
+    margin: 0
+    padding: 0
+    list-style: none
+
+    li
+      padding: 0.25rem 0.7rem
+      font-family: $font-mono
+      font-size: 0.85rem
+      line-height: 1.4
+      border: 1px solid $brown-light
+      border-radius: 4px
+      color: $brown
+
+  &__links
+    display: flex
+    flex-wrap: wrap
+    gap: 0.6rem
+    margin-top: 0.4rem
+
+  &__link
+    @include button-wood
+    padding: 0.4rem 1rem
+    font-family: $font-mono
+    font-size: 0.8rem
+
+    &:focus-visible
+      @include focus-ring
+
+    @include tablet
+      padding: 0.8rem 1rem
+
+  &__section
+    // Dernière rubrique : le regard critique sur le projet, détaché du reste
+    &--review
+      padding: 1.25rem 1.5rem
+      background: rgba($brown-light, 0.12)
+      border-left: 4px solid $title-ink
+      border-radius: 4px
+
+  &__section ul
+    display: flex
+    flex-direction: column
+    gap: 0.4rem
+    margin: 0
+    padding-left: 1.2rem
+
+  // Sur mobile : une seule colonne, marges réduites
+  @include mobile
+    gap: 1.5rem
+    padding: 1.25rem
+
+    &__title
+      padding-right: 0
+      font-size: 1.3rem
+
+    &__intro
+      grid-template-columns: 1fr
+      gap: 1rem
+
+    &__image
+      max-height: 32vh
+
+    &__section--review
+      padding: 1rem
+
+    h2
+      font-size: 1.05rem
+
+    p,
+    &__section li
+      font-size: 0.95rem

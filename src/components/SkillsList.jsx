@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import projects from "../data/projects.json";
 
-function SkillsList() {
-  const [expandedSkill, setExpandedSkill] = useState(null);
+// initialSkill : compétence à déplier dès l'ouverture (retour depuis une fiche projet)
+function SkillsList({ initialSkill = null }) {
+  const [expandedSkill, setExpandedSkill] = useState(initialSkill);
 
   // Liste des stacks uniques, dérivée des projets — pas de duplication de données
   const allSkills = [...new Set(projects.flatMap((p) => p.stack))].sort();
@@ -36,27 +38,18 @@ function SkillsList() {
 
             {isOpen && (
               <ul className="skills-list__projects">
-                {relatedProjects.map((project) =>
-                  project.liveUrl ? (
-                    <li key={project.id}>
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="skills-list__project-link"
-                      >
-                        {project.title}
-                      </a>
-                    </li>
-                  ) : (
-                    <li
-                      key={project.id}
-                      className="skills-list__project-static"
+                {relatedProjects.map((project) => (
+                  <li key={project.id}>
+                    {/* state : la fiche saura revenir sur cette compétence */}
+                    <Link
+                      to={`/projets/${project.id}`}
+                      state={{ from: "skills", skill }}
+                      className="skills-list__project-link"
                     >
                       {project.title}
-                    </li>
-                  ),
-                )}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             )}
           </li>

@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { useCallback } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useModal } from "../hooks/useModal";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -15,14 +16,31 @@ function Index() {
   usePageTitle("Portfolio interactif — Déborah Oudin, développeuse Full Stack");
 
   const navigate = useNavigate();
-  const { activeContent, openModal, closeModal } = useModal();
+  // En revenant d'une fiche projet, la modale se rouvre là où on l'avait quittée
+  const location = useLocation();
+  const { activeContent, openModal, closeModal } = useModal(
+    location.state?.modal,
+  );
+
+  // À la fermeture, on oublie le projet d'où l'on revenait : la prochaine ouverture
+  // (ou un rechargement de la page) repart du début du carrousel
+  const handleClose = useCallback(() => {
+    closeModal();
+    if (location.state) navigate(location.pathname, { replace: true });
+  }, [closeModal, location.state, location.pathname, navigate]);
 
   // Contenu et titre de chaque modale
   const modalContents = {
-    portfolio: { title: "Portfolio", content: <PortfolioList /> },
+    portfolio: {
+      title: "Portfolio",
+      content: <PortfolioList initialId={location.state?.projectId} />,
+    },
     games: { title: "Jeux préférés", content: <GamesList /> },
     recipes: { title: "Mes recettes favorites", content: <RecipesList /> },
-    skills: { title: "Compétences", content: <SkillsList /> },
+    skills: {
+      title: "Compétences",
+      content: <SkillsList initialSkill={location.state?.skill} />,
+    },
   };
   const activeModal = modalContents[activeContent];
 
@@ -80,7 +98,7 @@ function Index() {
 
       <Modal
         isOpen={!!activeModal}
-        onClose={closeModal}
+        onClose={handleClose}
         title={activeModal?.title}
       >
         {activeModal?.content}
