@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-function Carousel({ items, renderItem }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+function Carousel({ items, renderItem, initialIndex = 0 }) {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
   const goToPrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));

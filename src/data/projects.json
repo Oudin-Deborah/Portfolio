@@ -6,7 +6,45 @@
     "stack": ["React", "Vite", "Sass"],
     "image": "Witch_Room.webp",
     "liveUrl": "https://oudin-deborah.github.io/Portfolio/",
-    "repoUrl": "https://github.com/Oudin-Deborah/Portfolio"
+    "repoUrl": "https://github.com/Oudin-Deborah/Portfolio",
+    "details": {
+      "contexte": "Projet personnel, conçu et développé de A à Z pour présenter mon parcours et mes réalisations. Je voulais un portfolio qui me ressemble plutôt qu'une page classique : le visiteur explore une pièce de sorcière et clique sur les objets pour découvrir les contenus.",
+      "objectifs": [
+        "Présenter mes projets, mes compétences et un moyen de me contacter.",
+        "Proposer une navigation originale sans perdre le visiteur.",
+        "Rester utilisable sur mobile, au clavier et avec un lecteur d'écran.",
+        "Obtenir de bons résultats en performance, accessibilité et référencement."
+      ],
+      "realisations": [
+        "Scène interactive : les zones cliquables sont placées en pourcentages sur l'image de fond et restent alignées sur les objets quelle que soit la taille de l'écran.",
+        "Modale accessible : focus piégé dans la fenêtre, fermeture avec Échap, retour du focus sur l'élément d'origine.",
+        "Carrousel de projets et liste de compétences alimentés par un seul fichier JSON.",
+        "Une page de détail par projet, avec React Router et une route dynamique.",
+        "Formulaire de contact envoyé par Formspree, avec messages de succès et d'erreur annoncés par les lecteurs d'écran.",
+        "Musique d'ambiance partagée entre toutes les pages grâce à un contexte React, désactivée par défaut.",
+        "Version mobile : la scène laisse place à une liste de boutons, les parchemins à des panneaux lisibles.",
+        "Déploiement automatique sur GitHub Pages par GitHub Actions à chaque mise à jour de la branche principale."
+      ],
+      "competences": [
+        "Structurer une application React : composants, hooks personnalisés, contexte, routage.",
+        "Organiser des feuilles de style Sass avec variables, mixins et convention BEM.",
+        "Auditer et corriger l'accessibilité avec WAVE, axe et un lecteur d'écran.",
+        "Optimiser les performances : formats d'image, polices hébergées avec le site, préchargement.",
+        "Mettre en place un déploiement continu et travailler avec des branches et des pull requests.",
+        "Piloter un projet avec un Kanban, des sprints et des critères de succès."
+      ],
+      "resultats": [
+        "Site en ligne, navigable sur ordinateur, tablette et mobile.",
+        "Audit Lighthouse : 96 en performance, 100 en accessibilité, bonnes pratiques et référencement.",
+        "Aucune erreur ni alerte de contraste relevée par WAVE."
+      ],
+      "ameliorations": [
+        "Prévoir le responsive dès le départ : la scène a d'abord été pensée pour un écran d'ordinateur, et l'adapter ensuite a demandé de tout reprendre.",
+        "Écrire des messages de commit explicites dès le premier jour.",
+        "Pré-générer le HTML des pages pour améliorer le référencement, aujourd'hui limité par le rendu côté navigateur.",
+        "Ajouter les zones interactives encore prévues dans la scène (recettes, jeux, tarot)."
+      ]
+    }
   },
   {
     "id": "Kasa",
@@ -15,7 +53,42 @@
     "stack": ["React", "React Router", "Vite", "Sass"],
     "image": "Kasa_img.webp",
     "liveUrl": "",
-    "repoUrl": "https://github.com/Oudin-Deborah/P5_Kasa"
+    "repoUrl": "https://github.com/Oudin-Deborah/P5_Kasa",
+    "details": {
+      "contexte": "Projet de formation OpenClassrooms. Kasa est une plateforme fictive de location d'appartements entre particuliers, dont le site devait être entièrement refait en React à partir de maquettes fournies.",
+      "objectifs": [
+        "Développer le front-end complet de l'application avec React.",
+        "Mettre en place la navigation entre les pages avec React Router.",
+        "Respecter les maquettes sur ordinateur et sur mobile.",
+        "Créer des composants réutilisables, animés pour certains."
+      ],
+      "realisations": [
+        "Quatre pages : accueil avec les cartes de logements, fiche logement, à propos et page d'erreur 404.",
+        "Route dynamique /housing/:id : la fiche se construit à partir de l'identifiant présent dans l'adresse, et renvoie vers la page 404 si le logement n'existe pas.",
+        "Carrousel de photos qui boucle de la dernière à la première image, avec compteur, et sans flèches quand il n'y a qu'une photo.",
+        "Menu dépliant réutilisé pour la description, les équipements et la page à propos.",
+        "Composant de notation en étoiles.",
+        "Chargement des données depuis un fichier JSON, avec gestion des états de chargement et d'erreur."
+      ],
+      "competences": [
+        "Découper une interface en composants et leur passer des données par les props.",
+        "Gérer l'état local avec useState et les effets avec useEffect.",
+        "Configurer React Router : routes, paramètres d'adresse, page 404.",
+        "Écrire les styles en Sass et gérer le responsive.",
+        "Initialiser un projet avec Vite et ESLint."
+      ],
+      "resultats": [
+        "Application fonctionnelle et conforme aux maquettes sur ordinateur et mobile.",
+        "Composants réutilisés sur plusieurs pages sans duplication de code."
+      ],
+      "ameliorations": [
+        "Rendre le menu dépliant accessible au clavier en utilisant un vrai bouton plutôt qu'une zone cliquable.",
+        "Donner à chaque photo du carrousel un texte alternatif qui lui est propre.",
+        "Charger les données une seule fois et les partager, plutôt que de refaire l'appel sur chaque page.",
+        "Remplacer le README par défaut par une vraie présentation du projet.",
+        "Mettre le site en ligne."
+      ]
+    }
   },
   {
     "id": "Nina_Carducci",
@@ -24,7 +97,42 @@
     "stack": ["HTML", "SEO", "Performance web"],
     "image": "Nina_Carducci.webp",
     "liveUrl": "https://oudin-deborah.github.io/p4_optimisation/",
-    "repoUrl": "https://github.com/Oudin-Deborah/p4_optimisation"
+    "repoUrl": "https://github.com/Oudin-Deborah/p4_optimisation",
+    "details": {
+      "contexte": "Projet de formation OpenClassrooms. Nina Carducci est une photographe fictive installée à Bordeaux. Son site existait déjà, mais il était lent, mal référencé et sa galerie comportait des bugs. Je devais l'améliorer sans le refaire.",
+      "objectifs": [
+        "Améliorer les performances de chargement.",
+        "Optimiser le référencement, y compris le référencement local.",
+        "Rendre le site plus accessible.",
+        "Corriger les dysfonctionnements de la galerie photo."
+      ],
+      "realisations": [
+        "Conversion des images en WebP.",
+        "Minification des fichiers CSS et JavaScript.",
+        "Ajout de données structurées Schema.org pour décrire l'activité : photographe, adresse, horaires, lien vers Instagram.",
+        "Titre et description de page rédigés autour de l'activité et de la ville.",
+        "Textes alternatifs décrivant chaque photo, et libellés sur les commandes du carrousel.",
+        "Correction des filtres de la galerie et de la navigation dans la modale d'agrandissement."
+      ],
+      "competences": [
+        "Lire un rapport Lighthouse et en tirer une liste d'actions classées par priorité.",
+        "Comprendre ce qui ralentit une page et savoir y remédier.",
+        "Appliquer les bases du référencement technique et local.",
+        "Déboguer un code JavaScript que je n'avais pas écrit.",
+        "Mesurer l'effet d'une optimisation avant et après."
+      ],
+      "resultats": [
+        "Site en ligne, plus rapide à charger et mieux décrit pour les moteurs de recherche.",
+        "Galerie et modale de nouveau fonctionnelles.",
+        "Audit Lighthouse réalisé pour mesurer les gains."
+      ],
+      "ameliorations": [
+        "Mettre à jour les adresses contenues dans les données structurées, qui pointent encore vers un ancien compte GitHub.",
+        "Héberger les polices avec le site plutôt que de les charger depuis Google Fonts.",
+        "Remplacer la bibliothèque Bootstrap complète par les seuls composants utilisés.",
+        "Écrire des messages de commit plus précis que « update » ou « corrections »."
+      ]
+    }
   },
   {
     "id": "Booki",
@@ -33,7 +141,40 @@
     "stack": ["HTML", "CSS"],
     "image": "Booki.webp",
     "liveUrl": "",
-    "repoUrl": "https://github.com/Oudin-Deborah/Booki_Project"
+    "repoUrl": "https://github.com/Oudin-Deborah/Booki_Project",
+    "details": {
+      "contexte": "Premier projet de la formation OpenClassrooms. Booki est une agence de voyage fictive qui souhaite une page d'accueil permettant de trouver des hébergements et des activités dans la ville de son choix. Il s'agissait d'intégrer la maquette fournie, uniquement en HTML et CSS.",
+      "objectifs": [
+        "Intégrer fidèlement la maquette sur ordinateur, tablette et mobile.",
+        "Utiliser un HTML sémantique.",
+        "Mettre en page avec Flexbox, sans framework CSS.",
+        "Produire un code propre et lisible."
+      ],
+      "realisations": [
+        "Page d'accueil complète : barre de recherche, filtres, cartes d'hébergements, sélection des plus populaires, activités et pied de page.",
+        "Structure sémantique avec les balises header, nav, main, section, article et footer.",
+        "Mise en page en Flexbox et en Grid.",
+        "Variables CSS pour les couleurs principales.",
+        "Deux points de rupture pour adapter la page à la tablette et au mobile.",
+        "Effets de survol sur le menu et les filtres."
+      ],
+      "competences": [
+        "Découper une maquette en blocs et la traduire en HTML sémantique.",
+        "Maîtriser Flexbox et Grid pour construire une mise en page.",
+        "Rendre une page responsive avec les media queries.",
+        "Versionner mon travail avec Git et GitHub."
+      ],
+      "resultats": [
+        "Page conforme à la maquette sur les trois formats d'écran.",
+        "Projet présenté en soutenance."
+      ],
+      "ameliorations": [
+        "Partir du mobile pour aller vers l'ordinateur, plutôt que l'inverse : le CSS serait plus court.",
+        "Adopter une convention de nommage unique (BEM) dès le départ, ce qui m'aurait évité de renommer des classes en cours de route.",
+        "Utiliser Sass pour éviter les répétitions dans la feuille de style.",
+        "Mettre la page en ligne."
+      ]
+    }
   },
   {
     "id": "Grimoire",
@@ -42,7 +183,46 @@
     "stack": ["Express", "Node.js", "MongoDB"],
     "image": "mon_vieux_grimoire.webp",
     "liveUrl": "",
-    "repoUrl": "https://github.com/Oudin-Deborah/P6_Mon-Vieux-Grimoire"
+    "repoUrl": "https://github.com/Oudin-Deborah/P6_Mon-Vieux-Grimoire",
+    "details": {
+      "contexte": "Projet de formation OpenClassrooms. Mon Vieux Grimoire est une librairie fictive qui veut un site où ses lecteurs référencent et notent des livres. L'interface était fournie : j'ai développé tout le back-end, c'est-à-dire l'API et la base de données.",
+      "objectifs": [
+        "Créer une API REST conforme aux spécifications fournies.",
+        "Stocker les données dans une base MongoDB.",
+        "Sécuriser l'inscription, la connexion et les actions réservées aux utilisateurs connectés.",
+        "Gérer l'envoi des images de couverture et limiter leur poids."
+      ],
+      "realisations": [
+        "Serveur Express organisé en routes, contrôleurs, modèles et middlewares.",
+        "Opérations complètes sur les livres : créer, lire, modifier, supprimer.",
+        "Inscription et connexion : mot de passe haché avec bcrypt, puis jeton JWT valable 24 heures.",
+        "Middleware d'authentification qui protège les routes sensibles.",
+        "Contrôle d'autorisation : seul l'utilisateur qui a créé un livre peut le modifier ou le supprimer.",
+        "Envoi d'image avec Multer, puis redimensionnement et conversion en WebP avec Sharp.",
+        "Notation : un utilisateur ne note un livre qu'une fois, et la moyenne est recalculée à chaque note.",
+        "Route renvoyant les trois livres les mieux notés.",
+        "Identifiants de la base de données sortis du code grâce à un fichier d'environnement."
+      ],
+      "competences": [
+        "Concevoir et structurer une API REST avec Node.js et Express.",
+        "Modéliser des données et interroger MongoDB avec Mongoose.",
+        "Mettre en œuvre une authentification par jeton et hacher des mots de passe.",
+        "Écrire des middlewares et les enchaîner sur une route.",
+        "Traiter des fichiers envoyés par l'utilisateur.",
+        "Protéger des données sensibles avec des variables d'environnement."
+      ],
+      "resultats": [
+        "API fonctionnelle, branchée sur l'interface fournie.",
+        "Images de couverture allégées automatiquement à l'envoi."
+      ],
+      "ameliorations": [
+        "Placer aussi le secret du jeton dans le fichier d'environnement, comme je l'ai fait pour la base de données.",
+        "Renforcer la validation des données : champs obligatoires du modèle, format de l'adresse e-mail, note comprise entre 0 et 5.",
+        "Renvoyer des codes d'erreur plus précis, par exemple 403 quand l'utilisateur n'a pas le droit de supprimer un livre.",
+        "Supprimer l'ancienne image quand un livre est modifié.",
+        "Ajouter des tests automatisés sur les routes."
+      ]
+    }
   },
   {
     "id": "Sophie_Bluel",
@@ -51,6 +231,42 @@
     "stack": ["HTML", "CSS", "JavaScript"],
     "image": "Sophie_Bluel.webp",
     "liveUrl": "",
-    "repoUrl": "https://github.com/Oudin-Deborah/oc_project2"
+    "repoUrl": "https://github.com/Oudin-Deborah/oc_project2",
+    "details": {
+      "contexte": "Projet de formation OpenClassrooms. Sophie Bluel est une architecte d'intérieur fictive. Son site était statique : je devais le rendre dynamique en JavaScript, en le reliant à une API fournie, et lui ajouter un espace d'administration.",
+      "objectifs": [
+        "Afficher les projets de la galerie à partir de l'API.",
+        "Permettre de filtrer les projets par catégorie.",
+        "Créer une page de connexion pour l'administratrice.",
+        "Lui permettre d'ajouter et de supprimer des projets depuis une modale."
+      ],
+      "realisations": [
+        "Galerie construite en JavaScript à partir des données renvoyées par l'API.",
+        "Boutons de filtre créés automatiquement à partir des catégories de l'API.",
+        "Page de connexion : envoi des identifiants, message en cas d'erreur, jeton conservé pour les actions suivantes.",
+        "Modale à deux vues : galerie avec suppression, et formulaire d'ajout.",
+        "Ajout d'un projet avec envoi d'image, aperçu avant validation et contrôle du format et du poids du fichier.",
+        "Suppression d'un projet, avec mise à jour de la galerie sans recharger la page.",
+        "Gestion du focus à l'ouverture et à la fermeture de la modale."
+      ],
+      "competences": [
+        "Manipuler le DOM et gérer les événements en JavaScript.",
+        "Communiquer avec une API : lire, envoyer et supprimer des données avec fetch.",
+        "Gérer une authentification par jeton côté navigateur.",
+        "Envoyer un fichier avec FormData.",
+        "Construire une modale et un formulaire avec leurs contrôles."
+      ],
+      "resultats": [
+        "Site conforme à la maquette, avec galerie filtrable.",
+        "Espace d'administration fonctionnel : connexion, ajout et suppression de projets."
+      ],
+      "ameliorations": [
+        "Regrouper le code commun aux pages (appels à l'API, affichage de la galerie) dans un seul fichier.",
+        "Ne plus écrire l'adresse de l'API en dur, pour pouvoir mettre le site en ligne.",
+        "Remplacer les fenêtres d'alerte par des messages affichés dans le formulaire.",
+        "Insérer les textes venus de l'API avec textContent plutôt qu'innerHTML, plus sûr.",
+        "Vérifier la présence du jeton avant d'afficher la page d'édition."
+      ]
+    }
   }
 ]
