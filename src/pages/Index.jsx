@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useModal } from "../hooks/useModal";
 import Header from "../components/Header";
@@ -16,11 +16,20 @@ function Index() {
   usePageTitle("Portfolio interactif — Déborah Oudin, développeuse Full Stack");
 
   const navigate = useNavigate();
-  // En revenant d'une fiche projet, la modale se rouvre là où on l'avait quittée
+  // En arrivant d'une fiche projet ou d'un lien du menu, la modale demandée s'ouvre directement
   const location = useLocation();
   const { activeContent, openModal, closeModal } = useModal(
     location.state?.modal,
   );
+
+  // Ne sert que si le menu complet est affiché sur la scène (FULL_MENU_ON_SCENE dans Header.jsx) :
+  // un lien du menu vers une modale ne recharge pas la page quand on y est déjà, donc on repère
+  // la nouvelle navigation à sa clé pour ouvrir la modale demandée
+  const [lastKey, setLastKey] = useState(location.key);
+  if (location.key !== lastKey) {
+    setLastKey(location.key);
+    if (location.state?.modal) openModal(location.state.modal);
+  }
 
   // À la fermeture, on oublie le projet d'où l'on revenait : la prochaine ouverture
   // (ou un rechargement de la page) repart du début du carrousel

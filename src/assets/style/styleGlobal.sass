@@ -114,17 +114,26 @@ p
     width: 100%
     z-index: 10
     display: flex
-    flex-direction: row
-    justify-content: space-around
+    justify-content: center
     align-items: center
-    padding: 3.1rem 5% 0
+    padding: 3.1rem 5rem 0 // marges latérales : place du bouton son
 
-  // La typographie des liens est définie plus haut, avec les titres
-  // Sur la scène, il ne reste que « À propos » : il garde sa place à droite
+  // Sur la scène, il ne reste que « À propos de moi » : il garde sa place à droite
   &__nav--single
     justify-content: flex-end
     padding-right: 20%
 
+  // Liste des liens, centrée en haut de l'écran
+  &__menu
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 1.25rem
+    margin: 0
+    padding: 0
+    list-style: none
+
+  // La typographie des liens est définie plus haut, avec les titres
   // Étiquette à fond uni, bordée de la couleur du texte
   &__link
     display: inline-block
@@ -142,33 +151,73 @@ p
     &:focus-visible
       @include focus-ring(3px)
 
-  // Sur mobile : étiquettes plus compactes, alignées à droite du bouton son
+  // Bouton « Menu » : réservé à la version mobile
+  &__toggle
+    display: none
+    cursor: pointer
+
+  // Tablette horizontale : étiquettes resserrées pour tenir sur une ligne
+  @include tablet
+    &__menu
+      gap: 0.6rem
+
+    &__link
+      padding: 0.6rem 0.9rem
+      font-size: 0.9rem
+      letter-spacing: 1px
+
+  // Tablette verticale et mobile : un bouton « Menu » à droite du bouton son,
+  // qui déplie la liste des liens en dessous
   @include mobile
-    &__nav,
-    &__nav--single
+    &__nav
       justify-content: flex-end
-      gap: 0.5rem
       padding: 1rem 0.75rem 0 4.25rem
 
     &__link
       display: inline-flex
       align-items: center
       min-height: 2.75rem
-      padding: 0 0.8rem
-      font-size: 0.8rem
+      padding: 0 0.9rem
+      font-size: 0.85rem
       letter-spacing: 1px
 
-  // Petits téléphones : les deux étiquettes doivent tenir à côté du bouton son
-  @media (max-width: 380px)
-    &__nav,
-    &__nav--single
-      gap: 0.35rem
-      padding-right: 0.5rem
+    &__toggle
+      gap: 0.5rem
 
-    &__link
-      padding: 0 0.5rem
-      font-size: 0.7rem
-      letter-spacing: 0.5px
+    &__menu
+      display: none
+      position: absolute
+      top: calc(100% + 0.5rem)
+      right: 0.75rem
+      flex-direction: column
+      flex-wrap: nowrap
+      align-items: stretch
+      gap: 0.5rem
+      padding: 0.75rem
+      background: rgba($veil, 0.95)
+      border: 1px solid rgba($gold, 0.4)
+      border-radius: 0.5rem
+
+      &--open
+        display: flex
+
+      .header__link
+        display: flex
+        justify-content: center
+
+    // Sur la scène : un seul lien, affiché directement, sans bouton « Menu »
+    &__nav--single
+      padding-right: 0.75rem
+
+      .header__toggle
+        display: none
+
+      .header__menu
+        display: flex
+        position: static
+        padding: 0
+        background: none
+        border: 0
 
 // Footer //
 
