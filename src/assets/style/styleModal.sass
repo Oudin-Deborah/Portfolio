@@ -337,6 +337,11 @@
     &:hover
       color: $accent
 
+    // Écrans tactiles : zone de toucher de 44 px de haut
+    @include tablet
+      display: inline-block
+      padding: 0.8rem 0
+
   @include mobile
     grid-template-columns: 1fr
 

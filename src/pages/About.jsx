@@ -1,7 +1,7 @@
 //Imports de la page À propos//
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faDownload } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../assets/style/styleAbout.sass";
@@ -26,6 +26,17 @@ function About() {
               <FontAwesomeIcon icon={faArrowLeft} />
             </NavLink>
             <h1 className="about-content__title">À propos de moi</h1>
+            {/* download : le navigateur enregistre le PDF au lieu de l'ouvrir */}
+            <a
+              href={import.meta.env.BASE_URL + "CV_Deborah_Oudin.pdf"}
+              download
+              className="about-content__cv"
+              aria-label="Télécharger mon CV (PDF)"
+              title="Télécharger mon CV (PDF)"
+            >
+              <FontAwesomeIcon icon={faDownload} />
+              CV
+            </a>
           </header>
 
           <div className="about-content__sections">

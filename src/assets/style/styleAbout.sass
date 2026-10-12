@@ -51,6 +51,23 @@
     @include tablet
       padding: 0.75rem 1rem
 
+  // Téléchargement du CV, à droite du titre : fait pendant au bouton retour
+  &__cv
+    @include button-wood
+    display: inline-flex
+    align-items: center
+    gap: 0.5rem
+    padding: 0.4rem 0.8rem
+    font-family: $font-mono
+    font-size: 0.85rem
+    font-weight: 700
+
+    &:focus-visible
+      @include focus-ring
+
+    @include tablet
+      padding: 0.75rem 1rem
+
   &__title
     flex: 1
     margin: 0
@@ -93,8 +110,17 @@
     padding: 1.25rem
     overflow: visible
 
+    // Trois éléments sur une ligne étroite : on resserre pour que le bouton CV ne déborde pas
+    &__header
+      gap: 0.5rem
+
+    &__back,
+    &__cv
+      padding: 0.75rem 0.7rem
+
     &__title
-      font-size: 1.25rem
+      min-width: 0
+      font-size: 1.15rem
 
     &__sections
       grid-template-columns: 1fr
