@@ -1,5 +1,5 @@
 //Fiche détaillée d'un projet : l'identifiant vient de l'adresse (/projets/:id)//
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/Header";
@@ -19,6 +19,7 @@ const SECTIONS = [
 
 function Project() {
   const { id } = useParams();
+  const location = useLocation();
   // L'adresse est comparée sans tenir compte des majuscules
   const project = projects.find(
     (p) => p.id.toLowerCase() === id.toLowerCase(),
@@ -35,6 +36,15 @@ function Project() {
 
   const { details } = project;
 
+  // Retour : vers la compétence d'où l'on vient, sinon vers ce projet dans le carrousel
+  const fromSkills = location.state?.from === "skills";
+  const backState = fromSkills
+    ? { modal: "skills", skill: location.state.skill }
+    : { modal: "portfolio", projectId: project.id };
+  const backLabel = fromSkills
+    ? "Retour aux compétences"
+    : "Retour au portfolio";
+
   return (
     <div className="project-page">
       <Header />
@@ -42,13 +52,13 @@ function Project() {
       <main className="project-page__panel parchment">
         <article className="project">
           <header className="project__header">
-            {/* Retour à la scène, modale Portfolio ouverte */}
+            {/* Retour à la scène, modale rouverte à l'endroit quitté */}
             <Link
               to="/index"
-              state={{ modal: "portfolio" }}
+              state={backState}
               className="project__back"
-              aria-label="Retour au portfolio"
-              title="Retour au portfolio"
+              aria-label={backLabel}
+              title={backLabel}
             >
               <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
