@@ -12,9 +12,6 @@
     min-height: 0
     max-height: 45rem
     width: min(92vw, 65.5rem)
-    background-image: url("../parchemin__welcome.webp")
-    background-size: 100% 100%
-    background-repeat: no-repeat
     color: $ink-dark
 
     // Sur mobile : panneau à fond uni sur toute la largeur, le texte défile à l'intérieur
@@ -27,7 +24,11 @@
       container-type: normal
       overflow: hidden auto
 
+// L'image du parchemin est posée sur ce bloc, qui a exactement la taille du parchemin
+// Dessous, une couleur parchemin limitée à la zone du texte (content-box) : invisible sous l'image,
+// elle garde le texte lisible si l'image ne charge pas et sert de fond aux outils de contraste (WAVE)
 .about-content
+  background: url("../parchemin__welcome.webp") center / 100% 100% no-repeat border-box, $parchment content-box
   display: flex
   flex-direction: column
   gap: 2.8cqh
@@ -105,6 +106,7 @@
 
   // Sur mobile : une seule colonne et des tailles fixes, lisibles sur petit écran
   @include mobile
+    background: none // le panneau uni du parchemin sert de fond
     gap: 1.25rem
     height: auto
     padding: 1.25rem
