@@ -8,7 +8,6 @@
   // Livre ouvert : titre et réseaux sur la page de gauche, formulaire sur celle de droite
   // L'image est carrée avec de larges marges vides : on zoome pour n'afficher que le livre
   &__book
-    background: url("../parchemin_contact.webp") center / 115% auto no-repeat
     flex: 1 1 0
     min-height: 0
     max-height: 44rem
@@ -16,7 +15,11 @@
     aspect-ratio: 87 / 61 // proportions du livre dans l'image
     container-type: size // les marges des pages se règlent sur la taille du livre (cqw, cqh)
 
+  // L'image du livre est posée sur ce bloc, qui a exactement la taille du livre
+  // Dessous, une couleur parchemin limitée à la zone du texte (content-box) : invisible sous l'image,
+  // elle garde le texte lisible si l'image ne charge pas et sert de fond aux outils de contraste (WAVE)
   &__pages
+    background: url("../parchemin_contact.webp") center / 115% auto no-repeat border-box, $parchment content-box
     height: 100%
     display: grid
     grid-template-columns: 1fr 1fr
@@ -134,6 +137,7 @@
       overflow: hidden auto
 
     &__pages
+      background: none // le panneau uni du livre sert de fond
       display: flex
       flex-direction: column
       gap: 1.5rem
