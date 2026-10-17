@@ -11,19 +11,17 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <>
-      <AudioProvider>
-        <AudioLoop />
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/index" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projets/:id" element={<Project />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </AudioProvider>
-    </>
+    <AudioProvider>
+      <AudioLoop />
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/index" element={<Index />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/projets/:id" element={<Project />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AudioProvider>
   );
 }
 

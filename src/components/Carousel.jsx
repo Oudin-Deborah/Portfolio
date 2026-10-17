@@ -1,6 +1,9 @@
 //Caroussel pour la gestion des projets/skills//
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+// distance minimale (en px) pour qu'un glissement soit compté comme un swipe
+const SWIPE_THRESHOLD = 50;
 
 function Carousel({ items, renderItem, initialIndex = 0 }) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
@@ -11,6 +14,28 @@ function Carousel({ items, renderItem, initialIndex = 0 }) {
 
   const goToNext = () => {
     setCurrentIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
+  };
+
+  // Swipe tactile (mobile / tablette) : on mémorise le point de départ du doigt
+  const touchStart = useRef(null);
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!touchStart.current) return;
+    const touch = e.changedTouches[0];
+    const deltaX = touch.clientX - touchStart.current.x;
+    const deltaY = touch.clientY - touchStart.current.y;
+    touchStart.current = null;
+
+    // on ignore les petits mouvements et le défilement vertical de la page
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD || Math.abs(deltaX) < Math.abs(deltaY)) return;
+
+    if (deltaX < 0) goToNext(); // doigt vers la gauche → élément suivant
+    else goToPrev(); // doigt vers la droite → élément précédent
   };
 
   return (
@@ -24,7 +49,12 @@ function Carousel({ items, renderItem, initialIndex = 0 }) {
         <span aria-hidden="true">‹</span>
       </button>
 
-      <div className="carousel__track" aria-live="polite">
+      <div
+        className="carousel__track"
+        aria-live="polite"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {renderItem(items[currentIndex], currentIndex)}
       </div>
 

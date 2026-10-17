@@ -92,6 +92,7 @@
 
   &__track
     width: 100%
+    touch-action: pan-y // le navigateur garde le scroll vertical, le swipe horizontal est géré en JS
 
   &__arrow
     position: absolute
@@ -321,14 +322,14 @@
     flex-direction: column
     gap: 0.3rem
 
+    // flex : le tiret reste centré sur le lien, même quand celui-ci grandit (zone tactile)
     li
-      position: relative
-      padding-left: 0.8rem
+      display: flex
+      align-items: center
+      gap: 0.5rem
 
       &::before
         content: "—"
-        position: absolute
-        left: 0
         color: $brown-light
 
   &__project-link
