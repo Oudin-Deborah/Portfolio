@@ -85,6 +85,16 @@
 
 // Carrousel //
 
+@keyframes carousel-slide-from-right
+  from
+    transform: translateX(40%)
+    opacity: 0
+
+@keyframes carousel-slide-from-left
+  from
+    transform: translateX(-40%)
+    opacity: 0
+
 .carousel
   position: relative
   width: 100%
@@ -93,6 +103,24 @@
   &__track
     width: 100%
     touch-action: pan-y // le navigateur garde le scroll vertical, le swipe horizontal est géré en JS
+    overflow-x: clip // la carte qui glisse ne crée pas de scroll horizontal
+
+  // Animation du swipe (écrans tactiles uniquement)
+  &__slide
+    transition: transform 0.25s ease // retour en place si le geste est trop court
+
+    &--dragging
+      transition: none // pendant le glissement, la carte suit le doigt sans retard
+
+    &--from-next
+      animation: carousel-slide-from-right 0.3s ease-out
+
+    &--from-prev
+      animation: carousel-slide-from-left 0.3s ease-out
+
+    @media (prefers-reduced-motion: reduce)
+      transition: none
+      animation: none
 
   &__arrow
     position: absolute
