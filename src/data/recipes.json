@@ -1,0 +1,43 @@
+[
+  {
+    "id": "crepes",
+    "title": "Crêpes",
+    "description": "La recette classique des crêpes, dorées et fines, à garnir selon ses envies.",
+    "seasons": ["Hiver"],
+    "image": "crepes.webp",
+    "credit": {
+      "author": "Géraldine Leverd",
+      "url": "https://lacuisinedegeraldine.fr/pate-a-crepes-recette-de-base#"
+    },
+    "infos": {
+      "portions": "15 crêpes",
+      "preparation": "10 min",
+      "repos": "1 h",
+      "cuisson": "30 min"
+    },
+    "ingredients": [
+      "250 g de farine",
+      "4 œufs",
+      "50 cl de lait",
+      "50 g de beurre fondu",
+      "2 cuillères à soupe de sucre",
+      "1 pincée de sel"
+    ],
+    "etapes": [
+      "Verser la farine et le sel dans un saladier, puis creuser un puits au centre.",
+      "Ajouter les œufs et le sucre, puis mélanger au fouet en incorporant la farine petit à petit.",
+      "Verser le lait progressivement, sans cesser de fouetter, pour obtenir une pâte lisse.",
+      "Ajouter le beurre fondu et mélanger une dernière fois.",
+      "Couvrir et laisser reposer la pâte 1 heure à température ambiante.",
+      "Faire chauffer une poêle légèrement beurrée, verser une petite louche de pâte et l'étaler en inclinant la poêle.",
+      "Cuire environ 1 minute, retourner la crêpe quand les bords se décollent, puis laisser dorer l'autre face."
+    ],
+    "astuces": [
+      "Des grumeaux ? Un coup de mixeur plongeant et la pâte redevient lisse.",
+      "Pâte trop épaisse après le repos : ajouter un peu de lait pour la détendre.",
+      "Pour des crêpes plus légères, remplacer 10 cl de lait par de la bière ou de l'eau gazeuse.",
+      "Une cuillère à soupe de rhum ou de fleur d'oranger parfume la pâte.",
+      "Pour les garder chaudes, les empiler sur une assiette posée sur une casserole d'eau frémissante, recouvertes d'un torchon."
+    ]
+  }
+]

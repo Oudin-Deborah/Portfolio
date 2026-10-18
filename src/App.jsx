@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Project from "./pages/Project";
+import Recipe from "./pages/Recipe";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projets/:id" element={<Project />} />
+        <Route path="/recettes/:id" element={<Recipe />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AudioProvider>

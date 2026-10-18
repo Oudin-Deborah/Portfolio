@@ -45,7 +45,10 @@ function Index() {
       content: <PortfolioList initialId={location.state?.projectId} />,
     },
     games: { title: "Jeux préférés", content: <GamesList /> },
-    recipes: { title: "Mes recettes favorites", content: <RecipesList /> },
+    recipes: {
+      title: "Mes recettes favorites",
+      content: <RecipesList initialSeason={location.state?.season} />,
+    },
     skills: {
       title: "Compétences",
       content: <SkillsList initialSkill={location.state?.skill} />,
@@ -75,11 +78,11 @@ function Index() {
             className="witch-room__hotspot witch-room__hotspot--games"
             onActivate={() => openModal("games")}
           />*/}
-          {/*<InteractiveElement
-            label="Mes recettes favorites"
+          <InteractiveElement
+            label="Mes recettes"
             className="witch-room__hotspot witch-room__hotspot--recipes"
             onActivate={() => openModal("recipes")}
-          />*/}
+          />
           {/*<InteractiveElement
             label="Tarot"
             className="witch-room__hotspot witch-room__hotspot--tarot"
