@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import BackToTop from "../components/BackToTop";
 import NotFound from "./NotFound";
 import recipes from "../data/recipes.json";
 import { usePageTitle } from "../hooks/usePageTitle";
@@ -56,7 +57,10 @@ function Recipe() {
             >
               <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
-            <h1 className="project__title">{recipe.title}</h1>
+            {/* tabIndex -1 : le bouton « retour en haut » peut y ramener le focus */}
+            <h1 className="project__title" tabIndex={-1}>
+              {recipe.title}
+            </h1>
           </header>
 
           <div className="project__intro">
@@ -133,6 +137,8 @@ function Recipe() {
               </ul>
             </section>
           )}
+
+          <BackToTop />
         </article>
       </main>
 

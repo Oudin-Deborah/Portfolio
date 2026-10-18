@@ -123,6 +123,22 @@
     @include tablet
       padding: 0.8rem 1rem
 
+  // Retour en haut de page, centré sous la dernière rubrique
+  &__top
+    @include button-wood
+    align-self: center
+    padding: 0.5rem 0.9rem
+
+    &:focus-visible
+      @include focus-ring
+
+    @include tablet
+      padding: 0.75rem 1rem
+
+  // Titre : reçoit le focus au retour en haut, sans contour à la souris
+  &__title:focus
+    outline: none
+
   &__section
     // Dernière rubrique : le regard critique sur le projet, détaché du reste
     &--review
